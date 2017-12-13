@@ -30,7 +30,7 @@ class MoviesController < ApplicationController
 
   private
     def movie_params
-      params.require(:movie).permit(:title, :genre, :plot, :image, :rating, :web)
+      params.require(:movie).permit(:title, :genre, :plot, :image, :rating, :web, :year)
     end
 
     def set_link
