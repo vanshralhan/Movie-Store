@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+  before_action :set_link, except:[:index, :new, :create]
   def index
   end
 
@@ -32,4 +33,7 @@ class MoviesController < ApplicationController
       params.require(:movie).permit(:title, :genre, :plot, :image, :rating, :web)
     end
 
+    def set_link
+      @movie = Movie.find(params[:id])
+    end
 end
