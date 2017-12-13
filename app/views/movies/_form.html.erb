@@ -1,0 +1,47 @@
+<%= form_for(@movie) do |form| %>
+  <% if @movie.errors.any? %>
+    <div>
+      <h2>
+      <%= pluralize(@movie.errors.count, "error") %>
+      prohibited this movies being saved:
+      </h2>
+    <ul>
+      <% @movie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end%>
+    </ul>
+  </div>
+<% end %>
+
+  <div class="form-group">
+    <%= form.label :title%>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+      <%= form.label :Genre %>
+      <%= form.text_field :genre, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+      <%= form.label :plot %>
+      <%= form.text_area :plot, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+      <%= form.label :rating %>
+      <%= form.number_field :rating, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+      <%= form.label :website %>
+      <%= form.text_field :web, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+      <%= form.submit "Add Movie", class: "btn btn-primary btn-block" %>
+  </div>
+
+
+
+<% end %>

@@ -7,9 +7,9 @@ class MoviesController < ApplicationController
   end
 
   def create
-    @movie = Movie.new(params[:id])
+    @movie = Movie.new(movie_params)
       if @movie.save
-        redirect_to @article, notice: "Your Movie Saved Successfully"
+        redirect_to @movie, notice: "Your Movie Saved Successfully"
       else
         render 'new'
       end
@@ -28,8 +28,8 @@ class MoviesController < ApplicationController
   end
 
   private
-    def movies_params
-
+    def movie_params
+      params.require(:movie).permit(:title, :genre, :plot, :image, :rating, :web)
     end
 
 end
