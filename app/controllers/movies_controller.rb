@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :set_link, except:[:index, :new, :create]
+  before_action :set_link, except:[:index, :new, :create, :show,:browse]
   # before_action :layout_change, only: [:new]
   def index
     @movies = Movie.all
@@ -8,8 +8,7 @@ class MoviesController < ApplicationController
   def new
     @movie = Movie.new
     @all = Movie.all
-    render :layout => "new_layout"
-
+    render layout: "new_layout"
   end
 
   def create
@@ -29,9 +28,19 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @movie = Movie.find(params[:id])
+    # @movie.increment!(:count, by = 1)
+    View.create(movie_id: @movie.id)
+
+     # @movies_view = Movie.select("movies.*, COUNT(*) AS group_count").joins(:views).joins("JOIN views rg on rg.movie_id = views.movie_id").group('movies.id').order('group_count DESC')
   end
 
   def destroy
+  end
+
+
+  def browse
+    @movies = Movie.all
   end
 
   private
@@ -42,5 +51,10 @@ class MoviesController < ApplicationController
     def set_link
       @movie = Movie.find(params[:id])
       # @movie = Movie.find_by(title: params[:id])
+    end
+
+    def counter_check(movie)
+        movie.increment!(:count, by = 1)
+        # movie.save
     end
 end

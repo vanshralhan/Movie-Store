@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213144425) do
+ActiveRecord::Schema.define(version: 20171218122522) do
 
   create_table "movies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20171213144425) do
     t.datetime "updated_at", null: false
     t.integer "year"
     t.string "cast"
+    t.bigint "count", default: 0
+    t.integer "view_count"
   end
 
+  create_table "views", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "movie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_views_on_movie_id"
+  end
+
+  add_foreign_key "views", "movies"
 end
