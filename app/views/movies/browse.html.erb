@@ -1,35 +1,52 @@
     <h3>Movies</h3>
-		<div class="col-md-12">
-			<div class="tabbable" id="tabs-438739">
-				<ul class="nav nav-tabs">
-					<li>
-						<a href="#panel-85832" data-toggle="tab">By Ratings</a>
-					</li>
-					<li class="active">
-						<a href="#panel-998541" data-toggle="tab">By Views</a>
-					</li>
-				</ul>
+
+      <div class="tabbable" id="tabs-438739">
+        <ul class="nav nav-tabs">
+          <li class="<%=rating_check(@sorted)%>">
+            <a href="#panel-85832 " data-toggle="tab">By Ratings</a>
+          </li>
+          <li class="<%=view_check(@sorted)%>">
+            <a href="#panel-998541" data-toggle="tab">By Views</a>
+          </li>
+        </ul>
 
 
         <div class="tab-content">
-					<div class="tab-pane" id="panel-85832">
+          <div class="tab-pane <%=rating_check(@sorted)%>" id="panel-85832">
               <h2>Top Rated Movies</h2>
-              <% @movies.order('rating DESC').each   do |f| %>
-          		    <div class="col-md-3 ">
-          					<%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
-                    <h4><%= f.title%></h5>
+              <div class="row">
+              <% @movies.order('rating DESC').each_with_index  do |f,index| %>
+                 <% if (index % 4) == 0 %>
+                 <div class="clearfix"></div>
+                 <div class="col-md-3">
+                    <%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
+                    <h4><%= f.title%></h4>
                   </div>
+                 <%else%>
+                 <div class="col-md-3">
+                    <%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
+                    <h4><%= f.title%></h4>
+                  </div>
+                  <% end %>
               <% end %>
-					</div>
-					<div class="tab-pane active" id="panel-998541">
+            </div>
+          </div>
+          <div class="tab-pane <%=view_check(@sorted)%>" id="panel-998541">
               <h2>Top Views Movies</h2>
-              <% @movies.order('view_count DESC').each   do |f| %>
-          		    <div class="col-md-3 ">
-          					<%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
-                    <h4><%= f.title%></h5>
-          				</div>
+              <% @movies.order('view_count DESC').each_with_index   do |f,index| %>
+                  <% if (index % 4) == 0 %>
+                    <div class="clearfix"></div>
+                      <div class="col-md-3">
+                        <%= link_to image_tag(f.image_url, alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
+                        <h4><%= f.title%></h4>
+                      </div>
+                  <%else%>
+                     <div class="col-md-3 ">
+                        <%= link_to image_tag(f.image_url, alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
+                        <h4><%= f.title%></h4>
+                     </div>
+                  <% end %>
               <% end %>
-					</div>
-				</div>
-			</div>
-		</div>
+          </div>
+        </div>
+     </div>

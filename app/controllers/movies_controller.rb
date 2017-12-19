@@ -3,6 +3,7 @@ class MoviesController < ApplicationController
   # before_action :layout_change, only: [:new]
   def index
     @movies = Movie.all
+
   end
 
   def new
@@ -41,6 +42,15 @@ class MoviesController < ApplicationController
 
   def browse
     @movies = Movie.all
+
+    @sorted = params[:view]
+
+  #   if @sorted == "view"
+  #     @sort = Movie.order('rating DESC')
+  #   elsif @sorted == "rating"
+  #     @sort = Movie.order('view_count DESC')
+  #   end
+
   end
 
   private
@@ -57,4 +67,6 @@ class MoviesController < ApplicationController
         movie.increment!(:count, by = 1)
         # movie.save
     end
+
+
 end
