@@ -32,9 +32,10 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     # @movie.increment!(:count, by = 1)
     View.create(movie_id: @movie.id)
+    @genre = Movie.where(genre: @movie.genre).order('rating Desc')
 
      # @movies_view = Movie.select("movies.*, COUNT(*) AS group_count").joins(:views).joins("JOIN views rg on rg.movie_id = views.movie_id").group('movies.id').order('group_count DESC')
-  end
+   end
 
   def destroy
   end
@@ -42,15 +43,12 @@ class MoviesController < ApplicationController
 
   def browse
     @movies = Movie.all
-
     @sorted = params[:view]
-
   #   if @sorted == "view"
   #     @sort = Movie.order('rating DESC')
   #   elsif @sorted == "rating"
   #     @sort = Movie.order('view_count DESC')
   #   end
-
   end
 
   private
@@ -67,6 +65,4 @@ class MoviesController < ApplicationController
         movie.increment!(:count, by = 1)
         # movie.save
     end
-
-
 end
