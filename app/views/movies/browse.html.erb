@@ -14,39 +14,19 @@
         <div class="tab-content">
           <div class="tab-pane <%=rating_check(@sorted)%>" id="panel-85832">
               <h2>Top Rated Movies</h2>
-              <div class="row">
-              <% @movies.order('rating DESC').each_with_index  do |f,index| %>
-                 <% if (index % 4) == 0 %>
-                 <div class="clearfix"></div>
-                 <div class="col-md-3">
-                    <%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
-                    <h4><%= f.title%></h4>
-                  </div>
-                 <%else%>
-                 <div class="col-md-3">
-                    <%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
-                    <h4><%= f.title%></h4>
-                  </div>
-                  <% end %>
-              <% end %>
-            </div>
+                <%= render partial: "detail", locals: {sorted: @movies_rating} %>
           </div>
           <div class="tab-pane <%=view_check(@sorted)%>" id="panel-998541">
               <h2>Top Views Movies</h2>
-              <% @movies.order('view_count DESC').each_with_index   do |f,index| %>
-                  <% if (index % 4) == 0 %>
-                    <div class="clearfix"></div>
-                      <div class="col-md-3">
-                        <%= link_to image_tag(f.image_url, alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
-                        <h4><%= f.title%></h4>
-                      </div>
-                  <%else%>
-                     <div class="col-md-3 ">
-                        <%= link_to image_tag(f.image_url, alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
-                        <h4><%= f.title%></h4>
-                     </div>
-                  <% end %>
-              <% end %>
+              <%= render partial: "detail", locals: {sorted: @movies_view} %>
           </div>
         </div>
      </div>
+
+      <% if @movie.present? %>
+          <%= render partial: "detail", locals: {sorted: @movie} %>
+          
+      <% else%>
+
+      <% end%>
+      <div class="clearfix"></div>

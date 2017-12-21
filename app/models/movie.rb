@@ -5,4 +5,12 @@ class Movie < ApplicationRecord
   has_many :views
   has_many :comments
   has_many :users, through: :comments
+
+
+  def self.search(search)
+    where("title LIKE ?", "%#{search}%")
+  end
+
+
+
 end

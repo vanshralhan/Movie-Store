@@ -42,13 +42,19 @@ class MoviesController < ApplicationController
 
 
   def browse
-    @movies = Movie.all
-    @sorted = params[:view]
-  #   if @sorted == "view"
-  #     @sort = Movie.order('rating DESC')
-  #   elsif @sorted == "rating"
-  #     @sort = Movie.order('view_count DESC')
-  #   end
+      if params[:search]
+        @movie = Movie.search(params[:search]).order("created_at DESC")
+      else
+          redirect_to movies_path
+      end
+
+      @sorted = params[:view]
+      @movies_rating = Movie.order('rating DESC')
+      @movies_view = Movie.order('view_count DESC')
+  end
+
+  def search
+
   end
 
   private

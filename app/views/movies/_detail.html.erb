@@ -1,0 +1,17 @@
+<div class="row">
+
+<% sorted.each_with_index  do |f,index| %>
+   <% if (index % 4) == 0 %>
+   <div class="clearfix"></div>
+   <div class="col-md-3">
+      <%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
+      <h4><%= f.title%></h4>
+    </div>
+   <%else%>
+   <div class="col-md-3">
+      <%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
+      <h4><%= f.title%></h4>
+    </div>
+    <% end %>
+<% end %>
+</div>
