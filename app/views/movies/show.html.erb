@@ -97,11 +97,13 @@
 							<h3 class= "text-left">
 								Top <%= @genre.count%> Movies in <%= @movie.genre %>
 							</h3>
+							<div class = "scroll" >
 							<ol class="c">
 								<% @genre.each do |l| %>
-								<li> <%= l.title %></li><hr>
+								<li><%= link_to l.title, movie_path(l) %></li><hr>
 								<%end %>
 							</ol>
+						</div>
 						</div>
 		  </div>
 </div>
