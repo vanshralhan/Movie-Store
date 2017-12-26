@@ -12,8 +12,9 @@ ActiveAdmin.register Movie do
 #   permitted
 # end
 
-permit_params :title, :genre, :plot, :image, :rating, :web, :year
+permit_params :title, :genre, :plot, :image, :rating, :web, :year, :view
  decorate_with MovieDecorator
+
 index do
   selectable_column
   id_column
@@ -28,17 +29,15 @@ index do
 end
 
 filter :title
+filter :genre
 
-form do |f|
-  f.inputs do
-    f.input :title
-    f.input :genre
-    f.input :plot
-    f.input :image
-    f.input :rating
-    f.input :web
-    f.input :year
+  action_item :new_movie, only: :index do
+    link_to "Movie Upload Via Api", "http://rv:3000/admin/movies/new?view=automatic"
   end
-  f.actions
-end
+
+  form :html => { :enctype => "multipart/form-data"} do |f|
+    f.inputs do
+      render "movies/form", {movie: movie, view: params[:view]}
+    end
+  end
 end

@@ -18,10 +18,14 @@
     <%= form.text_field :title, class: "form-control" %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :poster%>
-    <%= form.file_field :image, class: "form-control" %>
-  </div>
+  <% if view == "automatic" %>
+  <%= hidden_field_tag 'view' , view %>
+  <% else %>
+  <%= hidden_field_tag 'view', view %>
+    <div class="form-group">
+      <%= form.label :poster%>
+      <%= form.file_field :image, class: "form-control" %>
+    </div>
 
   <div class="form-group">
     <%= form.label :ReleaseDate%>
@@ -48,8 +52,10 @@
       <%= form.text_field :web, class: "form-control" %>
   </div>
 
+  <% end %>
+
   <div class="form-group">
-      <%= form.submit "Add Movie", class: "btn btn-primary btn-block" %>
+      <%= form.submit "Add New Movie", class: "btn btn-primary btn-block" %>
   </div>
 
 
