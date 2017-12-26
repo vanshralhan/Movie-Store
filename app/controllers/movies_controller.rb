@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   before_action :set_link, except:[:index, :new, :create, :show,:browse]
   before_action :authenticate_admin_user!,only: [:create]
+  
   # before_action :layout_change, only: [:new]
   def index
     @movies = Movie.all
@@ -15,7 +16,7 @@ class MoviesController < ApplicationController
 
   def create
     if params[:view] == "automatic"
-      
+
       @m = ApiCall.new.api_call(params[:movie][:title])
         if @m == true
           redirect_to 'http://rv:3000/admin/movies', notice: "Movie Saved Successfully"
