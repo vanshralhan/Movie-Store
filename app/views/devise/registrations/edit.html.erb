@@ -9,6 +9,17 @@
 
       <div class="form-inputs">
 
+      <div class="form-group userimage">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control", :autofocus => true %>
+        <%= image_tag  current_user.photo, class: "rating-show-image" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :Profile_Picture %>
+        <%= f.file_field :photo, class: "form-control" %>
+      </div>
+
       <div class="form-group">
         <%= f.label :email %>
         <%= f.email_field :email, class: "form-control", :autofocus => true %>

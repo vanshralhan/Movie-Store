@@ -5,9 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'omniauth-facebook'
+
+
 gem 'draper'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook', '~> 4.0'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'carrierwave', '~> 1.0'
