@@ -5,12 +5,13 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
-
 gem 'draper'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook', '~> 4.0'
+gem 'omniauth-twitter'
+gem 'omniauth-linkedin'
+gem 'omniauth-google-oauth2'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'carrierwave', '~> 1.0'
