@@ -6,6 +6,7 @@ body{
 
 
 
+
   #copy{
       position:absolute;
       bottom:0;
@@ -31,6 +32,10 @@ body{
         }
       }
     }
+  .heading{
+    margin-top: 5px;
+    padding-bottom: 5px;
+  }
 
   .mask {
     position: absolute;
@@ -86,7 +91,8 @@ body{
 
         input {
           width: 260px;
-          margin-left: 10px;
+          text-align: center;
+          margin-left: 20px;
           margin-top: 15px;
           background: rgba(0, 0, 0, 0.3);
           border: none;
@@ -106,7 +112,7 @@ body{
         }
         input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
 
-        button{
+        .signinbutton{
           background: transparent;
           text-align: center;
           border: solid 2px #fff;

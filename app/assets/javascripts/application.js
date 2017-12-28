@@ -13,6 +13,11 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-// require rails-ujs
+//= require rails-ujs
 //= require turbolinks
-//= require_tree .
+
+jQuery(document).ready(function(){
+jQuery(document).on("click",".searcharea",function(){
+  jQuery("#search").toggle("slow");
+});
+});

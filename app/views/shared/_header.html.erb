@@ -8,17 +8,20 @@
     <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-             <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
           </button> <%= link_to 'Home', movies_path, :class=>"navbar-brand"%>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-          <%= form_tag(browse_movies_path, :method => "get", id: "search-form", :class => "navbar-form navbar-left form-group") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "",:class => "form-control searcharea form-group"  %>
-          <%= submit_tag "Search" , :class => "btn btn-default" %>
+          <%= form_tag(browse_movies_path, :method => "get", id: "search-form", :class => "navbar-form navbar-left  form-group") do %>
+              <span class="glyphicon glyphicon-search searcharea"></span>
+              <%= text_field_tag :search, params[:search], placeholder: "Search Movies",:class => "form-control searchfield form-group"  %>
+              <%= submit_tag "Search",class:"btn btn-default searchbutton" %>
           <% end %>
-      
+
+
 
         <% if !user_signed_in?%>
         <ul class="nav navbar-nav navbar-right">

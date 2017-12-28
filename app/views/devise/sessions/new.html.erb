@@ -37,35 +37,36 @@ $(document).ready(function(){
 });
 
 </script>
-
-<div id="copy"><a href="#" target="_blank"><b>@MovieStore</b></a></div>
+<!-- <div class = "login1"> -->
+<div id="copy"><a href="<%=movies_path %>" target="_blank"><h3 class ="heading"><b>MovieStore</b></h3></a></div>
 <div class="mask">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="modal display">
     <div class="circle" style="background: url(&quot;https://s3-us-west-2.amazonaws.com/s.cdpn.io/9589/profile/profile-512_1.jpg&quot;);"></div>
     <div class="login">
       <h1>Login</h1>
       <form method="post">
-        <input type="text" name="u" placeholder="Username" required="required"/>
-        <input type="password" name="p" placeholder="Password" required="required"/>
-        <button class="btn btn-primary btn-block btn-large" type="submit">Let me in.</button>
+        <%= f.email_field :email, placeholder: "Email",autofocus: true, class: "form-control emailfield", required: true %>
+        <%= f.password_field :password,placeholder: "Password", class: "form-control passfield", required: true %>
+        <%= f.submit "Sign In", class: "btn btn-primary btn-block btn-large signinbutton" %>
       </form>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
 
-
-
-
-<% v = 0%>
-<% while v<10 %>
-  <div class= "vertical vertical<%= v %>">
-      <% i = 0%>
-      <% while i<3 %>
-        <% Movie.all.each_with_index do |movie, index| %>
-          <div class="horizontal horizontal0<%= index %>" style="background: url(<%= movie.image_url %>);"></div>
-        <% end %>
-        <% i += 1%>
-      <% end %>
-  </div>
-  <% v+= 1 %>
-<% end %>
+    <% v = 0%>
+    <% while v<10 %>
+      <div class= "vertical vertical<%= v %>">
+          <% i = 0%>
+          <% while i<3 %>
+            <% Movie.all.each_with_index do |movie, index| %>
+              <div class="horizontal horizontal0<%= index %>" style="background: url(<%= movie.image_url %>);"></div>
+            <% end %>
+            <% i += 1%>
+          <% end %>
+      </div>
+      <% v+= 1 %>
+    <% end %>
+<!-- </div> -->

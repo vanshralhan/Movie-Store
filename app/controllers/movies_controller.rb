@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index,:browse,:show]
   before_action :set_link, except: [:index, :new, :create, :show,:browse]
   before_action :authenticate_admin_user!,only: [:create]
 

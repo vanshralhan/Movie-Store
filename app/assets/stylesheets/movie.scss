@@ -55,7 +55,16 @@
     height: 350px;
     overflow: scroll;
 }
-
+.searchbutton{
+  display: none;
+}
+#search
+{
+  display: none
+}
+.searcharea{
+  padding: 8px;
+}
 .image1{
   margin-left: 269px;
   width: 50%;
