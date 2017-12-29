@@ -23,4 +23,9 @@
 # Movie.create(title: "The Bourne Supremacy",year: "2004",genre: "Action",cast: "Matt Damon, Franka Potente, Brian Cox, Julia Stiles",plot: "When Jason Bourne is framed for a CIA operation gone awry, he is forced to resume his former life as a trained assassin to survive.",remote_image_url: "https://images-na.ssl-images-amazon.com/images/M/MV5BYTIyMDFmMmItMWQzYy00MjBiLTg2M2UtM2JiNDRhOWE4NjBhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",rating: "7.8",web: "http://www.thebournesupremacy.com/")
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
-User.create(email: 'office.vansh@gmail.com', password: '123456', password_confirmation: '123456') if Rails.env.development?
+# User.create(email: 'office.vansh@gmail.com', password: '123456', password_confirmation: '123456') if Rails.env.development?
+
+# Movie.create(title: "BlackPanther",year: "2018",genre: "Action",cast: "Matt Damon, Franka Potente, Brian Cox, Julia Stiles",plot: "When Jason Bourne is framed for a CIA operation gone awry, he is forced to resume his former life as a trained assassin to survive.",remote_image_url: "https://www.hdwallpapers.site/previews/the-black-panther-2018-movie-poster-77.jpg",rating: "7.9",web: "http://www.thebournesupremacy.com/")
+# Movie.create(title: "Deadpool",year: "2016",genre: "Action",cast: "Matt Damon, Franka Potente, Brian Cox, Julia Stiles",plot: "When Jason Bourne is framed for a CIA operation gone awry, he is forced to resume his former life as a trained assassin to survive.",remote_image_url: "https://farm4.staticflickr.com/3699/18958720124_7d10cb12fa_b.jpg",rating: "8.8",web: "http://www.thebournesupremacy.com/")
+
+Movie.create(title: "Oblivion",year: "2015",genre: "Action",cast: "Matt Damon, Franka Potente, Brian Cox, Julia Stiles",plot: "When Jason Bourne is framed for a CIA operation gone awry, he is forced to resume his former life as a trained assassin to survive.",remote_image_url: "https://d2kektcjb0ajja.cloudfront.net/images/posts/feature_images/000/000/072/large-1466557422-feature.jpg?1466557422",rating: "9.2",web: "http://www.thebournesupremacy.com/")

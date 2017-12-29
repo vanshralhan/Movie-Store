@@ -37,24 +37,30 @@ $(document).ready(function(){
 });
 
 </script>
-<!-- <div class = "login1"> -->
+
 <div id="copy"><a href="<%=movies_path %>" target="_blank"><h3 class ="heading"><b>MovieStore</b></h3></a></div>
 <div class="mask">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
   <div class="modal display">
     <div class="circle" style="background: url(&quot;https://s3-us-west-2.amazonaws.com/s.cdpn.io/9589/profile/profile-512_1.jpg&quot;);"></div>
     <div class="login">
-      <h1>Login</h1>
-      <form method="post">
+      <h1 class="loginheading">Login</h1>
+      <a href="<%= user_google_oauth2_omniauth_authorize_path %>" >
+        <i class="fa fa-google-plus-square googlebutton"></i>
+      </a>
+      <a href="<%= user_facebook_omniauth_authorize_path %>" >
+        <i class="fa fa-facebook-square facebookbutton"></i>
+      </a>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <form method="post">
         <%= f.email_field :email, placeholder: "Email",autofocus: true, class: "form-control emailfield", required: true %>
         <%= f.password_field :password,placeholder: "Password", class: "form-control passfield", required: true %>
-        <%= f.submit "Sign In", class: "btn btn-primary btn-block btn-large signinbutton" %>
+        <%= f.submit "Sign In", class: "signinbutton" %>
       </form>
-        </div>
+      </div>
       <% end %>
     </div>
   </div>
-</div>
 
     <% v = 0%>
     <% while v<10 %>
@@ -69,4 +75,4 @@ $(document).ready(function(){
       </div>
       <% v+= 1 %>
     <% end %>
-<!-- </div> -->
+</div>
