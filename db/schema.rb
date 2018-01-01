@@ -88,11 +88,11 @@ ActiveRecord::Schema.define(version: 20171229124347) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
-    t.string "provider"
-    t.string "uid"
     t.string "name"
     t.string "photo"
     t.string "dob"
+    t.string "uid"
+    t.string "provider"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

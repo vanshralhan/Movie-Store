@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "mellony dry brush";
+  src: url(/assets/mellonydrybrush) format("truetype");
+}
+
+.mainhome{
+    height: 50px;
+    width: 150px;
+    opacity: .8;
+    font-family: "mellony dry brush" !important;
+
+}
+
+.navbar-default {
+  background-image: none;
+  background-color: transparent; /* Make the menu become transparent */
+  border-radius: 0px;
+  border: 0;
+  box-shadow: none;
+  margin-bottom: 5px;
+  // padding: 10px;
+  // position: absolute; /* Make the menu out of the document flow so it can placed anywhere without disturbing other widgets */
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  z-index: 8; /* If you delete this line, your menu link won't be clicked because it is behind the background. Applying this code bring the menu in front of the background */
+}
+
+.navbar-default .navbar-brand {
+  font-family: Baskerville,serif !important;
+  color: #ffffff;
+  // color: inherit;
+  font-size: 20px;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+}
+
+.navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+
+.explore {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.explore .btn-lg,
+.explore .btn-lg:hover {
+  border-radius: 30px;
+  padding: 15px 25px;
+  font-size: 22px;
+  background-image: none;
+  background-color: #FF4000;
+  border-color: #FF4000;
+  color: #ffffff;
+}
+
+// .btn,
+// .btn:hover {
+//   border-radius: 0px;
+//   background-image: none;
+//   background-color: #FF4000;
+//   border-color: #FF4000;
+//   color: #ffffff;
+//   margin-bottom: 20px;
+//   box-shadow: none;
+//   outline: none;
+// }
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  color: #ffffff;
+  outline: none;
+}

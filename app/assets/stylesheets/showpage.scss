@@ -1,0 +1,141 @@
+body{
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 2;
+
+      .content{
+        background: rgba(0,0,0,.85);
+      }
+
+      .details{
+        margin-left: 0px;
+      }
+      .showmovieimg{
+        height: 500px;
+        width: 360px;
+        // margin-left: 10px;
+      }
+
+      h1{
+        font-size: 50px;
+        color: white;
+      }
+      h3{
+        color: white;
+        font-size: 20px;
+        span{
+          font-size: 16px;
+        }
+      }
+      h2{
+        color: white;
+      }
+      p{
+        color: white;
+      }
+      .rating-show-image{
+        width: 30px;
+        height: 30px;
+      }
+
+      .commentsection{
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+        .comments{
+          margin-left: 2px;
+          margin-right: 2px;
+          height: 100%;
+          width: 100%;
+          // background-color: #ACA19E;
+          opacity: 15;
+        }
+        .commentpart{
+          margin: 5px 0px 0px 0px;
+        }
+        .username{
+          margin-left: 8px;
+          color: white;
+        }
+        .usernamemodal{
+          color: Black;
+          margin-left: 8px;
+        }
+        .commentimage{
+          width: 75px;
+          height: 65px;
+        }
+        .commentbody{
+          color: Green;
+          margin-top: 14px;
+        }
+
+      .newcommentimage{
+        width: 120px;
+        height: 120px;
+        margin-top: -110px;
+        margin-left: 5px;
+      }
+
+      .commentarea{
+          width: 405px;
+          height: 120px;
+          margin-right: 5px;
+      }
+
+      .commentsubmit{
+          float: right;
+          width: 130px;
+          height: 30px;
+          margin-bottom: 15px;
+      }
+      h4{
+        color: white;
+        margin-left: 6px;
+      }
+      .modal-title{
+        color: Black;
+      }
+      .modalcomment{
+        color: inherit;
+        margin-top: 10px;
+      }
+      .sub-modal{
+        color: inherit;
+      }
+      .movielist {
+        font-family: sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      .movielist td,.movielist th{
+        border: 2px;
+        padding: 8px;
+        font-size: 16px;
+        color: white;
+        border-bottom: solid 1px grey;
+      }
+      .movielist tr{
+
+      }
+      .movielist tr:hover{
+        background-color: #ddd;
+      }
+      .movielist th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #828282;
+        opacity: 0.8;
+        color: white;
+      }
+      .scroll{
+        width: 550px;
+        height: 340px;
+        overflow-y: scroll;
+      }
+      .showfooter{
+        text-align: center;
+      }
+    }

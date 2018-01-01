@@ -1,11 +1,9 @@
 
-
-			<%= render 'shared/header' %>
-
+<%= render 'header/header' %>
 <div class= "container">
   <div class="row">
     <h2>Top Views Movies</h2>
-    <% @movies.order('view_count DESC').limit(4).each   do |f| %>
+    <% @movie.order('view_count DESC').limit(4).each   do |f| %>
 		    <div class="col-md-3 ">
 					<%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
 					<!-- <a href = "<%= movie_path(f) %>">
@@ -19,7 +17,7 @@
 
 	<div class="row">
     <h2>Top Rated Movies</h2>
-    <% @movies.order('rating DESC').limit(4).each do |f| %>
+    <% @movie.order('rating DESC').limit(4).each do |f| %>
 		<div class="col-md-3">
 			<%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
 		</div>

@@ -1,0 +1,35 @@
+<a id="modal-960972" href="#modal-container-960972" role="button" class="btn btn-default pull-right	" data-toggle="modal"> More Reviews</a>
+<div class="modal fade" id="modal-container-960972" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modalbox">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          ×
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+           All Reviews
+        </h4>
+      </div>
+      <div class="modal-body">
+        <% @movie.comments.each do |comment| %>
+        <p>
+          <div class="col-md-2">
+           <img src= "<%= User.find(comment.user_id).photo_url %>" class="commentimage"><br>
+           <div class="usernamemodal"><b><i><%= User.find(comment.user_id).name %></b></i></div>
+         </div>
+       </p>
+       <div class="col-md-10 modalcomment">
+           <%= comment.body %>
+           <p class="sub-modal"><i><small>Submitted <strong><%= time_ago_in_words(comment.created_at) %> ago</strong></small></i></p>
+        </div>
+        <div class = "clearfix"></div>
+        <% end%>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

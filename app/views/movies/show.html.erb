@@ -1,111 +1,86 @@
+<style type="text/css">
+	body { background-image: url(<%= @movie.image_url %>) }
+</style>
 
-			<div class="row">
-						<div class="col-md-4">
-								<img alt="<% @movie.title %>" src="<%= @movie.image_url %>" class="img-thumbnail stng" />
-					  </div>
 
-								<div class="col-md-8">
-										<div class="col-md-4">
-												<div>
-													<h3>
-														<%= @movie.title + "" + "(#{@movie.year})"%>
-							  				  </h3>
-						    			  </div>
-												<div>
-													<b><i>Genre:</i></b>
-													<i><%= @movie.genre %></i>
-						   					</div>
-										</div>
-										<div class="col-md-4">
-												<%= image_tag 'rating.png', class: "rating-show-image" %>
-												<p class = "rating-show"><%= @movie.rating %>/10</p>
-										</div>
-										<div class="clearfix"></div>
-										<div>
-												<h2>Plot:</h2>
-												<p><%= @movie.plot%></p>
-										</div>
-										<div>
-												<h2>Cast:</h2>
-												<p><%= @movie.cast%></p>
-										</div>
-										<div class="webbutton btn-group btn pull-right">
-    								<a class = "btn btn-primary btn-lg" href = "<%= @movie.web %>" >Website</a>
-  									</div>
-				     		</div>
+<div class ="container">
+	<%= render 'header/showheader' %>
+	<div class="content">
+		  <div class="row">
+					<div class="col-md-4">
+						<img alt="<% @movie.title %>" src="<%= @movie.image_url %>" class="showmovieimg" />
+				  </div>
+
+					<div class="col-md-8 details">
+						<div>
+							<h2>
+								<%= @movie.title%>
+						  </h2>
+						</div>
+				    <div class = "clearfix" ></div>
+						<div>
+							<h3 class="plot">Plot: <span><%= @movie.plot%></span></h3>
+						</div>
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-4"><h2>Cast:</h2><p><i><%= @movie.cast%></i></p></div>
+								<div class="col-md-4"><h2>Genre:</h2><p><i><%= @movie.genre %></i></p></div>
+								<div class="col-md-4"></div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="row">
+								<div class="col-md-4"><h2>Year:</h2><p><i><%= @movie.year%></i></p></div>
+								<div class="col-md-4"><h2>Rating:</h2><p><i><%= image_tag 'rating.png'  , class: "rating-show-image" %> <%= @movie.rating %>/10</i></p></div>
+								<div class="col-md-4"></div>
+							</div>
+							<div class="webbutton">
+								<a class = "btn btn-primary btn-md" href = "<%= @movie.web %>" >Website</a>
+							</div>
+					</div>
 			</div>
-			<div class="clearfix"></div>
-
-			<div class="row">
-			<div class="col-md-12">
-						<div class = "col-md-6">
-							<div>
-								<h3>Comments</h3>
-									<div class = "commentsection">
-											<% @movie.comments.limit(3).each do |comment| %>
-												<div class="col-md-3">
-												 <%= image_tag 'usr.png', class: "commentimage" %>
-											   <%= User.find(comment.user_id).name %>
-										   </div>
-											 <div>
-												 <%= comment.body %>
-											 </div>
-											<div class="clearfix"></div>
-										<% end %>
-										<a id="modal-960972" href="#modal-container-960972" role="button" class="btn btn-default pull-right	" data-toggle="modal"> More Reviews</a>
-										<div class="modal fade" id="modal-container-960972" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-											<div class="modal-dialog">
-												<div class="modal-content">
-													<div class="modal-header">
-														<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-															×
-														</button>
-														<h4 class="modal-title" id="myModalLabel">
-															 All Reviews
-														</h4>
-													</div>
-													<div class="modal-body">
-														<% @movie.comments.each do |comment| %>
-														<p>
-															 <%= image_tag 'usr.png', class: "commentimage" %>
-															 <%= comment.user_id %>
-															 <%= comment.body %>
-														</p>
-														<% end%>
-													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-default" data-dismiss="modal">
-															Close
-														</button>
-													</div>
+				<div class="clearfix"></div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class = "col-md-6">
+								<%= render 'comments' %>
+									<div class="clearfix"></div>
+										<h4>Add Comment</h4>
+											<%= form_for([@movie, @movie.comments.build], class: "form-inline") do |f| %>
+												<div class= "form-group">
+													<img src= "<%= current_user.photo_url %>" class="img-thumbnail newcommentimage">
+														<%= f.text_area :body , :class => "commentarea"%>
+													 	<p>
+				 											<%= f.submit :class => "commentsubmit btn btn-primary" %>
+			 											</p>
 												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="clearfix"></div>
-									<h4>Reviews(<%= @movie.comments.count %>)</h4>
-										<%= form_for([@movie, @movie.comments.build], class: "form-inline") do |f| %>
-										<div class= "form-group">
-										<%= image_tag 'usr.png', class: "rating-show-image img-thumbnail commentimage1", align: "middle" %>
-											 		<%= f.text_area :body , :class => "commentarea"%>
-										 		<p>
-	 												<%= f.submit :class => "commentsubmit btn-primary" %>
- 												</p>
-											</div>
-										<% end %>
-								</div>
-						<div class = "col-md-6">
-							<h3 class= "text-left">
-								Top <%= @genre.count%> Movies in <%= @movie.genre %>
-							</h3>
-							<div class = "scroll" >
-							<ol class="c">
-								<% @genre.each do |l| %>
-								<li><%= link_to l.title, movie_path(l) %></li><hr>
-								<%end %>
-							</ol>
+											<% end %>
+							</div>
+							<div class = "col-md-6">
+								<div class="scroll">
+									<table class="movielist">
+										<thead>
+										 <tr>
+							  			 <th>#</th>
+	 							  			 <th>Top <%= @movie.genre %> Movies</th>
+									  	</tr>
+									 	</thead>
+										<tbody>
+											<%count=0 %>
+					 		 				<% @genre.each do |movie|%>
+							 					<% if movie.genre == @movie.genre %>
+								 				<%count+=1%>
+												<tr>
+													<td class="sno"><%=count%></td>
+										  		<td><i><a href="<%= movie_path(movie.id)%>" class="table"> <%= movie.title %></i></a> </td>
+					 							</tr>
+												<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							  </div>
+							</div>
 						</div>
-						</div>
-		  </div>
+					</div>
+	</div>
+<%= render 'footer/showfooter' %>
 </div>
