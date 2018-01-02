@@ -1,22 +1,23 @@
+<style type="text/css">
+	body { background-color: #333 }
+</style>
+<br><br>
 
-<%= render 'header/header' %>
-
-<!-- <div class="disslider">
-  <div id="wrapper">
-    <div id="imageslider">
-
-    <% i = 1 %>
-      <% while i<9 %>
-        <% @movie.limit(8).each do |movie| %>
-          <div class="imageslider i<%= i %>"><img src="<%= movie.image_url %>" class="sliderimage"></div>
-          <% i += 1%>
-        <% end %>
-      <% end %>
+<div class="container-fluid outercontainer">
+  <%= render 'header/header' %>
+    <div class="disslider">
+      <div id="wrapper">
+        <div id="imageslider">
+          <% i = 1 %>
+          <% @movie.limit(8).each do |movie| %>
+            <div class="imageslider i<%=i%>"><img src="<%= movie.image_url %>" class="sliderimage"></div>
+            <% i += 1%>
+          <% end %>
+        </div>
+      </div>
     </div>
-  </div>
-</div> -->
-
-<div class="disslider">
+</div>
+<!-- <div class="disslider">
   <div id="wrapper">
 		<div id="imageslider">
 			<div class="imageslider i1"><img src="https://dl.dropbox.com/u/80409395/Codepen/Noe-in-leaves.jpg"></div>
@@ -29,31 +30,62 @@
 			<div class="imageslider i8"><img src="https://dl.dropbox.com/u/80409395/Codepen/Sledding.jpg"></div>
 		</div>
 	</div>
-</div>
+</div> -->
 
-<div class= "container">
-  <div class="row">
-    <h2>Top Views Movies</h2>
-    <% @movie.order('view_count DESC').limit(4).each   do |f| %>
-		    <div class="col-md-3 ">
-					<%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
-					<!-- <a href = "<%= movie_path(f) %>">
-						<img alt= "<%=f.title%>" src="<%= f.image_url %>" class = "img-thumbnail image"/>
-					</a> -->
-				</div>
-    <% end %>
+
+<!-- <script>
+$(function(){
+var front = $('.i1'),
+    others = ['i3', 'i2', 'i4', 'i5'];
+
+$('.Carousel').on('click', '.Items', function() {
+  var $this = $(this);
+
+  $.each(others, function(i, cl) {
+    if ($this.hasClass(cl)) {
+      front.removeClass('i1').addClass(cl);
+      front = $this;
+      front.addClass('i1').removeClass(cl);
+    }
+  });
+});
+});
+</script>
+<div class="Container">
+  <div class="bodycheck">
+  <ul class="Carousel">
+      <% i = 1 %>
+      <% @movie.order('id DESC').limit(5).each do |movie| %>
+        <li class = "Items i<%= i %>"><img src="<%= movie.image_url %>" class="sliderimage"></li>
+        <% i += 1%>
+      <% end %>
+  </ul>
+</div>
+</div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+
+  <div class= "container innercontainer">
+    <div class="row">
+      <h2>Top Views Movies</h2>
+        <% @movie.order('view_count DESC').limit(4).each   do |f| %>
+		      <div class="col-md-3 ">
+					       <%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
+        					<!-- <a href = "<%= movie_path(f) %>">
+        						<img alt= "<%=f.title%>" src="<%= f.image_url %>" class = "img-thumbnail image"/>
+        					</a> -->
+				  </div>
+        <% end %>
+    </div>
+
+	     <%= link_to 'Browse More', browse_movies_path(view: "view") %>
+    <div class="row">
+      <h2>Top Rated Movies</h2>
+      <% @movie.order('rating DESC').limit(4).each do |f| %>
+		    <div class="col-md-3">
+			    <%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
+		    </div>
+      <% end %>
+	  </div>
+	     <%= link_to 'Browse More', browse_movies_path(view: "rating")%>
+	  <br><br>
   </div>
-
-	<%= link_to 'Browse More', browse_movies_path(view: "view") %>
-
-	<div class="row">
-    <h2>Top Rated Movies</h2>
-    <% @movie.order('rating DESC').limit(4).each do |f| %>
-		<div class="col-md-3">
-			<%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
-		</div>
-    <% end %>
-	</div>
-	<%= link_to 'Browse More', browse_movies_path(view: "rating")%>
-	<br><br>
-</div>

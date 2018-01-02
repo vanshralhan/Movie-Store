@@ -67,20 +67,25 @@ html {
   display: none
 }
 .searcharea{
-  padding: 0px;
+  padding: 5px;
   font-size: 20px;
-  color: white;
+  // color: white;
+  border: none;
+  border-bottom: 1px solid;
+  background-color: transparent;
 }
+
 .search-area{
     opacity: .8;
     background-color: black;
     margin-right: 5px;
-    margin-top: 6px;
+    margin-top: 8px;
     height: 60px;
 }
 
 .dropdown{
   font-size: 25px;
+  font-color: inherit;
   font-family: Indie Flower;
   background-color: black;
   height: 60px;
