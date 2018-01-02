@@ -2,12 +2,11 @@
 	body { background-image: url(<%= @movie.image_url %>) }
 </style>
 
-
 <div class ="container">
 	<%= render 'header/showheader' %>
 	<div class="content">
 		  <div class="row">
-					<div class="col-md-4">
+					<div class="col-md-4 movieimagediv">
 						<img alt="<% @movie.title %>" src="<%= @movie.image_url %>" class="showmovieimg" />
 				  </div>
 
@@ -47,7 +46,11 @@
 										<h4>Add Comment</h4>
 											<%= form_for([@movie, @movie.comments.build], class: "form-inline") do |f| %>
 												<div class= "form-group">
-													<img src= "<%= current_user.photo_url %>" class="img-thumbnail newcommentimage">
+													<% if user_signed_in? %>
+														<img src= "<%= current_user.photo %>" class="img-thumbnail newcommentimage">
+													<%else %>
+														<%= image_tag 'usr.png', class: "newcommentimage" %>
+													<%end%>
 														<%= f.text_area :body , :class => "commentarea"%>
 													 	<p>
 				 											<%= f.submit :class => "commentsubmit btn btn-primary" %>

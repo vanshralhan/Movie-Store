@@ -44,3 +44,13 @@
   </div>
   <% v+= 1 %>
 <% end %>
+
+
+
+<div class="image i2"><img src="https://dl.dropbox.com/u/80409395/Codepen/Nat-sitting.jpg"></div>
+<div class="image i3"><img src="https://dl.dropbox.com/u/80409395/Codepen/Nat-noodles.jpg"></div>
+<div class="image i4"><img src="https://dl.dropbox.com/u/80409395/Codepen/Charlie-smiling.jpg"></div>
+<div class="image i5"><img src="https://dl.dropbox.com/u/80409395/Codepen/Girls-in-leaves.jpg"></div>
+<div class="image i6"><img src="https://dl.dropbox.com/u/80409395/Codepen/Natalie-smiling.jpg"></div>
+<div class="image i7"><img src="https://dl.dropbox.com/u/80409395/Codepen/Charlie-sleeping.jpg"></div>
+<div class="image i8"><img src="https://dl.dropbox.com/u/80409395/Codepen/Sledding.jpg"></div>

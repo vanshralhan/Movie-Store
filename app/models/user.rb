@@ -32,7 +32,7 @@ class User < ApplicationRecord
            user.skip_confirmation!
            user.save
 
-          elsif auth.provider == "google_oauth2"
+         elsif auth.provider == "google_oauth2"
               user.provider = auth.provider
               user.uid = auth.uid
               # user.first_name = auth.info.first_name
@@ -43,11 +43,14 @@ class User < ApplicationRecord
               user.photo = auth.info.image
               user.skip_confirmation!
               user.save
+
           end
-     end
+      end
+    end
+    return user
    end
-      return user
-   end
+end
+
 
   # def self.from_omniauth(auth)
   #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -68,4 +71,3 @@ class User < ApplicationRecord
   #     end
   #   end
   # end
-end

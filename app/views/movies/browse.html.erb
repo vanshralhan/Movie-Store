@@ -1,5 +1,6 @@
-  <h3>Movies</h3>
 
+  <div class="container">
+    <h3>Movies</h3>
       <div class="tabbable" id="tabs-438739">
         <ul class="nav nav-tabs">
           <li class="<%=rating_check(@sorted)%>">
@@ -13,20 +14,12 @@
 
         <div class="tab-content">
           <div class="tab-pane <%=rating_check(@sorted)%>" id="panel-85832">
-              <h2>Top Rated Movies</h2>
                 <%= render partial: "detail", locals: {sorted: @movies_rating} %>
           </div>
           <div class="tab-pane <%=view_check(@sorted)%>" id="panel-998541">
-              <h2>Top Views Movies</h2>
               <%= render partial: "detail", locals: {sorted: @movies_view} %>
           </div>
         </div>
      </div>
 
-      <% if @movie.present? %>
-          <%= render partial: "detail", locals: {sorted: @movie} %>
-          
-      <% else%>
-
-      <% end%>
-      <div class="clearfix"></div>
+</div>

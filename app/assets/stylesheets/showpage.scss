@@ -1,7 +1,6 @@
 body{
       background-repeat: no-repeat;
-      background-size: cover;
-      opacity: 2;
+      background-size: 100% 100%;
 
       .content{
         background: rgba(0,0,0,.85);
@@ -10,6 +9,7 @@ body{
       .details{
         margin-left: 0px;
       }
+
       .showmovieimg{
         height: 500px;
         width: 360px;
@@ -109,7 +109,7 @@ body{
         border-collapse: collapse;
         width: 100%;
       }
-      .movielist td,.movielist th{
+      .movielist td, .movielist th{
         border: 2px;
         padding: 8px;
         font-size: 16px;

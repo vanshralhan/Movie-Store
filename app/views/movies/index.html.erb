@@ -1,5 +1,36 @@
 
 <%= render 'header/header' %>
+
+<!-- <div class="disslider">
+  <div id="wrapper">
+    <div id="imageslider">
+
+    <% i = 1 %>
+      <% while i<9 %>
+        <% @movie.limit(8).each do |movie| %>
+          <div class="imageslider i<%= i %>"><img src="<%= movie.image_url %>" class="sliderimage"></div>
+          <% i += 1%>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div> -->
+
+<div class="disslider">
+  <div id="wrapper">
+		<div id="imageslider">
+			<div class="imageslider i1"><img src="https://dl.dropbox.com/u/80409395/Codepen/Noe-in-leaves.jpg"></div>
+			<div class="imageslider i2"><img src="https://dl.dropbox.com/u/80409395/Codepen/Nat-sitting.jpg"></div>
+			<div class="imageslider i3"><img src="https://dl.dropbox.com/u/80409395/Codepen/Nat-noodles.jpg"></div>
+			<div class="imageslider i4"><img src="https://dl.dropbox.com/u/80409395/Codepen/Charlie-smiling.jpg"></div>
+			<div class="imageslider i5"><img src="https://dl.dropbox.com/u/80409395/Codepen/Girls-in-leaves.jpg"></div>
+			<div class="imageslider i6"><img src="https://dl.dropbox.com/u/80409395/Codepen/Natalie-smiling.jpg"></div>
+			<div class="imageslider i7"><img src="https://dl.dropbox.com/u/80409395/Codepen/Charlie-sleeping.jpg"></div>
+			<div class="imageslider i8"><img src="https://dl.dropbox.com/u/80409395/Codepen/Sledding.jpg"></div>
+		</div>
+	</div>
+</div>
+
 <div class= "container">
   <div class="row">
     <h2>Top Views Movies</h2>

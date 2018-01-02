@@ -1,104 +1,101 @@
-@font-face {
-  font-family: "mellony dry brush";
-  src: url(/assets/mellonydrybrush) format("truetype");
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+html {
+  box-sizing: border-box;
 }
 
-.mainhome{
-    height: 50px;
-    width: 150px;
-    opacity: .8;
-    font-family: "mellony dry brush" !important;
-
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
 }
 
-.navbar-default {
-  background-image: none;
-  background-color: transparent; /* Make the menu become transparent */
-  border-radius: 0px;
-  border: 0;
-  box-shadow: none;
-  margin-bottom: 5px;
-  // padding: 10px;
-  // position: absolute; /* Make the menu out of the document flow so it can placed anywhere without disturbing other widgets */
-  // top: 0;
-  // left: 0;
-  // right: 0;
-  z-index: 8; /* If you delete this line, your menu link won't be clicked because it is behind the background. Applying this code bring the menu in front of the background */
-}
-
-.navbar-default .navbar-brand {
-  font-family: Baskerville,serif !important;
-  color: #ffffff;
-  // color: inherit;
-  font-size: 20px;
-}
-
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #ffffff;
-  background-color: transparent;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: #ffffff;
-}
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #ffffff;
-  background-color: transparent;
-}
-
-.navbar-default .navbar-toggle {
-  border-color: transparent;
-}
-
-.navbar-default .navbar-toggle:hover {
-  background-color: transparent;
-}
-
-.navbar-default .navbar-toggle:focus {
-  background-color: transparent;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffffff;
-}
-
-.explore {
-  text-align: center;
+.menu {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  // max-width: 720px;
   margin-top: 10px;
+  margin-bottom: 10px;
+  // height: 100vh;
+  list-style: none;
 }
 
-.explore .btn-lg,
-.explore .btn-lg:hover {
-  border-radius: 30px;
-  padding: 15px 25px;
-  font-size: 22px;
-  background-image: none;
-  background-color: #FF4000;
-  border-color: #FF4000;
-  color: #ffffff;
+
+.menu li {
+  // height: 5  0px;
+  // transition: background-position-x 0.9s linear;
+  text-align: center;
+
+
+  a {
+    // font-size: 22px;
+    color: #777;
+    text-decoration: none;
+    // transition: all 0.45s;
+  }
+  &:hover {
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEi%0D%0AIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhs%0D%0AaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0%0D%0AaD0iMzkwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDM5MCA1MCIgZW5hYmxlLWJhY2tn%0D%0Acm91bmQ9Im5ldyAwIDAgMzkwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0i%0D%0Abm9uZSIgc3Ryb2tlPSIjZDk0ZjVjIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGlt%0D%0AaXQ9IjEwIiBkPSJNMCw0Ny41ODVjMCwwLDk3LjUsMCwxMzAsMAoJYzEzLjc1LDAsMjguNzQtMzgu%0D%0ANzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVj%0D%0AMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
+    animation: line 1s;
+  }
+
+  &:hover a {
+    color: #d94f5c;
+  }
+
+  &:not(:last-child) {
+    //   margin-right: 30px;
+  }
 }
 
-// .btn,
-// .btn:hover {
-//   border-radius: 0px;
-//   background-image: none;
-//   background-color: #FF4000;
-//   border-color: #FF4000;
-//   color: #ffffff;
-//   margin-bottom: 20px;
-//   box-shadow: none;
-//   outline: none;
-// }
+.movie-store{
+  font-size: 40px;
+  color: inherit;
+  font-family: Indie Flower;
+  background-color: black;
+  opacity: 0.8;
+  height: 60px;
+  margin-right: 5px;
+}
+.searchbutton{
+  display: none;
+}
+#search{
+  display: none
+}
+.searcharea{
+  padding: 0px;
+  font-size: 20px;
+  color: white;
+}
+.search-area{
+    opacity: .8;
+    background-color: black;
+    margin-right: 5px;
+    margin-top: 6px;
+    height: 60px;
+}
 
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus {
-  color: #ffffff;
-  outline: none;
+.dropdown{
+  font-size: 25px;
+  font-family: Indie Flower;
+  background-color: black;
+  height: 60px;
+  margin-right: 5px;
+  li{
+
+      font-size: 15px;
+      background-color: none;
+  }
+}
+.centerli{
+  padding-top: 11px;
+}
+@keyframes line {
+  0% {
+    background-position-x: 390px;
+  }
 }

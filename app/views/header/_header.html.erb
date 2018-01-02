@@ -4,7 +4,7 @@ $('.carousel').carousel({
 });
 </script>
 
-<div class="container-fluid main">
+<div class="">
     <nav class="navbar navbar-default">
       <div class = "container-fluid">
         <div class="navbar-header">
@@ -70,9 +70,46 @@ $('.carousel').carousel({
         <% end %>
       </div>
     </div>
-    </nav>
+        </nav>
+      </div>
 
-    <div class="carousel slide carousel-fade " id="mycarousel" data-ride="carousel">
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="carousel slide carousel-fade " id="mycarousel" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-slide-to="0" data-target="#mycarousel" class="active">
         </li>
@@ -80,12 +117,13 @@ $('.carousel').carousel({
         </li>
         <li data-slide-to="2" data-target="#mycarousel">
         </li>
-      </ol>
+      </ol> -->
 
-      <div class="carousel-inner" role="listbox">
+      <!-- <div class="carousel-inner" role="listbox">
         <% @movie.order('id DESC').limit(3).each_with_index do |f,index| %>
             <div class="item <%= imglast(index)%>">
-              <%= image_tag(f.image_url, alt: "f.title", class: "centeralign image1")%>
+              <%= image_tag(f.image_url, alt: "f.title", class: "centeralign image1")%> -->
+
               <!-- <div class="covertext">
               <div class="col-lg-10" style="float:none; margin:0 auto;">
                 <h1 class="title"><%=f.title%></h1>
@@ -93,21 +131,20 @@ $('.carousel').carousel({
                   <a href="<% movie_path(f)%>"><button type="button" class="btn btn-lg explorebtn">View</button></a>
                 </div> -->
 
-              <div class="carousel-caption">
+              <!-- <div class="carousel-caption">
                 <h4><b><i>
                   <%= f.title %>
                 </i></b></h4>
-              </div>
+              </div> -->
 
             <!-- </div>
       </div> -->
 
-      <a class="left carousel-control" href="#mycarousel" data-slide="prev">
+      <!-- <a class="left carousel-control" href="#mycarousel" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span></a>
         <a class="right carousel-control" href="#mycarousel" data-slide="next">
           <span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
     <% end %>
     </div>
-  </div>
-  </div>
+  </div> -->
