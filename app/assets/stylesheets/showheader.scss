@@ -10,8 +10,20 @@ html {
   padding: 0;
   margin: 0;
 }
-
+.navbar-nav .navbar-brand {
+    padding-top:5px !important; padding-bottom:0 !important;
+    height: 30px;
+}
+.navbar {min-height:30px !important;}
+.navbar-default{
+  border: none;
+  background: black;
+  opacity: .8;
+  margin: 0px 0 15px 0;
+}
 .menu {
+  // background-color: black;
+  // opacity: .8;
   padding-top: 15px;
   padding-bottom: 5px;
   display: flex;
@@ -43,7 +55,7 @@ html {
   }
 
   &:hover a {
-    color: #d94f5c;
+    color: #871212;
   }
 
   &:not(:last-child) {
@@ -55,9 +67,9 @@ html {
   font-size: 40px;
   color: inherit;
   font-family: Indie Flower;
-  background-color: black;
-  opacity: 0.8;
-  height: 60px;
+  // background-color: black;
+  // opacity: 0.8;
+  // height: 60px;
   margin-right: 5px;
 }
 .searchbutton{
@@ -76,8 +88,8 @@ html {
 }
 
 .search-area{
-    opacity: .8;
-    background-color: black;
+    // opacity: .8;
+    // background-color: black;
     margin-right: 5px;
     margin-top: 8px;
     height: 60px;
@@ -87,8 +99,8 @@ html {
   font-size: 25px;
   font-color: inherit;
   font-family: Indie Flower;
-  background-color: black;
-  height: 60px;
+  // background-color: black;
+  // height: 60px;
   margin-right: 5px;
   li{
 

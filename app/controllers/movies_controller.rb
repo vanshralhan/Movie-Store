@@ -9,7 +9,6 @@ class MoviesController < ApplicationController
 
   def index
     @movie = Movie.all
-    render layout: "index_layout"
   end
 
   def new

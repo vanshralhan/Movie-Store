@@ -1,20 +1,24 @@
 <div class = "commentsection">
     <div class = "row comments">
-      <h3>Comments(<%= @movie.comments.count %>)</h3>
-      <% @movie.comments.limit(3).each do |comment| %>
-        <div class = "row">
-            <div class="col-sm-12">
-              <div class="col-md-2 commentpart">
-                <img src= "<%= User.find(comment.user_id).photo_url %>" class="commentimage"><br>
-                <div class="commentpart username"><b><i><%= User.find(comment.user_id).name %></b></i></div>
+      <h3>Comments&nbsp;(<%= @movie.comments.count %>)</h3>
+      <% if @movie.comments.count == 0 %>
+        <p>&nbsp; &nbsp; &nbsp;Be the first one to comment</p>
+      <% else %>
+        <% @movie.comments.limit(3).each do |comment| %>
+          <div class = "row">
+              <div class="col-sm-12">
+                <div class="col-md-2 commentpart">
+                  <img src= "<%= User.find(comment.user_id).photo_url %>" class="commentimage"><br>
+                  <div class="commentpart username"><p><%= User.find(comment.user_id).name %></p></div>
+                </div>
+                <div class="col-md-10 commentbody">
+                  <p><%= comment.body %></p>
+                  <i><small class="subm">Submitted <strong><%= time_ago_in_words(comment.created_at) %> ago</strong></small></i>
+                </div>
               </div>
-              <div class="col-md-10 commentbody">
-                <%= comment.body %>
-                <p class="subm"><i><small>Submitted <strong><%= time_ago_in_words(comment.created_at) %> ago</strong></small></i></p>
-              </div>
-            </div>
-        </div>
-        <div class="clearfix"></div>
+          </div>
+          <div class="clearfix"></div>
+        <% end %>
       <% end %>
       <%= render 'allreviews' %>
     </div>

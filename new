@@ -28,29 +28,3 @@
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p
-
-
-
-<% v = 0%>
-<% while v<10 %>
-  <div class= "vertical vertical<%= v %>">
-      <% i = 0%>
-      <% while i<3 %>
-        <% Movie.all.each_with_index do |movie, index| %>
-          <div class="horizontal horizontal0<%= index %>" style="background: url(<%= movie.image_url %>);"></div>
-        <% end %>
-        <% i += 1%>
-      <% end %>
-  </div>
-  <% v+= 1 %>
-<% end %>
-
-
-
-<div class="image i2"><img src="https://dl.dropbox.com/u/80409395/Codepen/Nat-sitting.jpg"></div>
-<div class="image i3"><img src="https://dl.dropbox.com/u/80409395/Codepen/Nat-noodles.jpg"></div>
-<div class="image i4"><img src="https://dl.dropbox.com/u/80409395/Codepen/Charlie-smiling.jpg"></div>
-<div class="image i5"><img src="https://dl.dropbox.com/u/80409395/Codepen/Girls-in-leaves.jpg"></div>
-<div class="image i6"><img src="https://dl.dropbox.com/u/80409395/Codepen/Natalie-smiling.jpg"></div>
-<div class="image i7"><img src="https://dl.dropbox.com/u/80409395/Codepen/Charlie-sleeping.jpg"></div>
-<div class="image i8"><img src="https://dl.dropbox.com/u/80409395/Codepen/Sledding.jpg"></div>

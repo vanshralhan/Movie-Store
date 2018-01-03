@@ -1,0 +1,132 @@
+<div class="container outercontainer">
+	<%= render 'header/header' %>
+		<div class="disslider">
+      <div id="wrapper">
+        <div id="imageslider">
+          <% i = 1 %>
+          <% @movie.limit(8).each do |movie| %>
+            <div class="imageslider i<%=i%>"><img src="<%= movie.image_url %>" class="sliderimage"></div>
+            <% i += 1%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- <div class="disslider">
+  <div id="wrapper">
+		<div id="imageslider">
+			<div class="imageslider i1"><img src="https://dl.dropbox.com/u/80409395/Codepen/Noe-in-leaves.jpg"></div>
+			<div class="imageslider i2"><img src="https://dl.dropbox.com/u/80409395/Codepen/Nat-sitting.jpg"></div>
+			<div class="imageslider i3"><img src="https://dl.dropbox.com/u/80409395/Codepen/Nat-noodles.jpg"></div>
+			<div class="imageslider i4"><img src="https://dl.dropbox.com/u/80409395/Codepen/Charlie-smiling.jpg"></div>
+			<div class="imageslider i5"><img src="https://dl.dropbox.com/u/80409395/Codepen/Girls-in-leaves.jpg"></div>
+			<div class="imageslider i6"><img src="https://dl.dropbox.com/u/80409395/Codepen/Natalie-smiling.jpg"></div>
+			<div class="imageslider i7"><img src="https://dl.dropbox.com/u/80409395/Codepen/Charlie-sleeping.jpg"></div>
+			<div class="imageslider i8"><img src="https://dl.dropbox.com/u/80409395/Codepen/Sledding.jpg"></div>
+		</div>
+	</div>
+</div> -->
+
+---------------------------------------------------------------------------------------------
+<div class="carousel slide carousel-fade " id="mycarousel" data-ride="carousel">
+	<ol class="carousel-indicators">
+		<li data-slide-to="0" data-target="#mycarousel" class="active">
+		</li>
+		<li data-slide-to="1" data-target="#mycarousel">
+		</li>
+		<li data-slide-to="2" data-target="#mycarousel">
+		</li>
+	</ol>
+	<div class="carousel-inner" role="listbox">
+		<% @movie.order('id DESC').limit(3).each_with_index do |f,index| %>
+				<div class="item <%= imglast(index)%>">
+					<%= image_tag(f.image_url, alt: "f.title", class: "centeralign image1")%>
+					<!-- <div class="covertext">
+						<div class="col-lg-10" style="float:none; margin:0 auto;">
+							<h1 class="title"><%=f.title%></h1>
+							<div class="col-xs-12 explore">
+								<a href="<% movie_path(f)%>"><button type="button" class="btn btn-lg explorebtn">View</button></a>
+							</div>
+							<div class="carousel-caption">
+								<h4><b><i>
+								<%= f.title %>
+								</i></b></h4>
+							</div>
+						</div>
+					</div> -->
+	<a class="left carousel-control" href="#mycarousel" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span></a>
+		<a class="right carousel-control" href="#mycarousel" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+<% end %>
+</div>
+</div>
+---------------------------------------------------------------------------------------------
+<!-- <script>
+$(function(){
+var front = $('.i1'),
+    others = ['i3', 'i2', 'i4', 'i5'];
+
+$('.Carousel').on('click', '.Items', function() {
+  var $this = $(this);
+
+  $.each(others, function(i, cl) {
+    if ($this.hasClass(cl)) {
+      front.removeClass('i1').addClass(cl);
+      front = $this;
+      front.addClass('i1').removeClass(cl);
+    }
+  });
+});
+});
+</script>
+<div class="Container">
+  <div class="bodycheck">
+  <ul class="Carousel">
+      <% i = 1 %>
+      <% @movie.order('id DESC').limit(5).each do |movie| %>
+        <li class = "Items i<%= i %>"><img src="<%= movie.image_url %>" class="sliderimage"></li>
+        <% i += 1%>
+      <% end %>
+  </ul>
+</div>
+</div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+
+---------------------------------------------------------------------------------------------------------------------
+<%= render 'header/showheader' %>
+<div class="carousel slide carousel-fade " id="mycarousel" data-ride="carousel">
+	<ol class="carousel-indicators">
+		<li data-slide-to="0" data-target="#mycarousel" class="active">
+		</li>
+		<li data-slide-to="1" data-target="#mycarousel">
+		</li>
+		<li data-slide-to="2" data-target="#mycarousel">
+		</li>
+	</ol>
+	<div class="carousel-inner" role="listbox">
+		<% @movie.order('id DESC').limit(3).each_with_index do |f,index| %>
+				<div class="item <%= imglast(index)%>">
+					<%= image_tag(f.image_url, alt: "f.title", class: "centeralign image1")%>
+					<!-- <div class="covertext">
+						<div class="col-lg-10" style="float:none; margin:0 auto;">
+							<h1 class="title"><%=f.title%></h1>
+							<div class="col-xs-12 explore">
+								<a href="<% movie_path(f)%>"><button type="button" class="btn btn-lg explorebtn">View</button></a>
+							</div>
+							<div class="carousel-caption">
+								<h4><b><i>
+								<%= f.title %>
+								</i></b></h4>
+							</div>
+						</div>
+					</div> -->
+	<a class="left carousel-control" href="#mycarousel" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span></a>
+		<a class="right carousel-control" href="#mycarousel" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+<% end %>
+</div>
+</div>

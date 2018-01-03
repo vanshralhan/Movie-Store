@@ -2,7 +2,7 @@
 	body { background-image: url(<%= @movie.image_url %>) }
 </style>
 
-<div class ="container innercontainer">
+<div class ="container showcontainer">
 	<%= render 'header/showheader' %>
 	<div class="content">
 		  <div class="row">
@@ -22,14 +22,14 @@
 						</div>
 						<div class="clearfix"></div>
 						<div class="row">
-							<div class="col-md-4"><h2>Cast:</h2><p><i><%= @movie.cast%></i></p></div>
-								<div class="col-md-4"><h2>Genre:</h2><p><i><%= @movie.genre %></i></p></div>
+							<div class="col-md-4"><h2>Cast:</h2><p><%= @movie.cast%></p></div>
+								<div class="col-md-4"><h2>Genre:</h2><p><%= @movie.genre %></p></div>
 								<div class="col-md-4"></div>
 							</div>
 							<div class="clearfix"></div>
 							<div class="row">
-								<div class="col-md-4"><h2>Year:</h2><p><i><%= @movie.year%></i></p></div>
-								<div class="col-md-4"><h2>Rating:</h2><p><i><%= image_tag 'rating.png'  , class: "rating-show-image" %> <%= @movie.rating %>/10</i></p></div>
+								<div class="col-md-4"><h2>Year:</h2><p><%= @movie.year%></p></div>
+								<div class="col-md-4"><h2>Rating:</h2><p><%= image_tag 'rating.png'  , class: "rating-show-image" %> <%= @movie.rating %>/10</p></div>
 								<div class="col-md-4"></div>
 							</div>
 							<div class="webbutton">
@@ -47,8 +47,12 @@
 											<%= form_for([@movie, @movie.comments.build], class: "form-inline") do |f| %>
 												<div class= "form-group">
 													<% if user_signed_in? %>
-														<img src= "<%= current_user.photo %>" class="img-thumbnail newcommentimage">
-													<%else %>
+														<% if !current_user.photo_url == nil%>
+															<img src= "<%= current_user.photo %>" class="img-thumbnail newcommentimage">
+														<%else%>
+															<%= image_tag 'usr.png', class: "newcommentimage" %>
+														<% end %>
+													<%else%>
 														<%= image_tag 'usr.png', class: "newcommentimage" %>
 													<%end%>
 														<%= f.text_area :body , :class => "commentarea"%>
@@ -64,7 +68,7 @@
 										<thead>
 										 <tr>
 							  			 <th>#</th>
-	 							  			 <th>Top <%= @movie.genre %> Movies</th>
+	 							  			 <th><h4>Top <%= @movie.genre %> Movies</h4></th>
 									  	</tr>
 									 	</thead>
 										<tbody>
@@ -74,7 +78,7 @@
 								 				<%count+=1%>
 												<tr>
 													<td class="sno"><%=count%></td>
-										  		<td><i><a href="<%= movie_path(movie.id)%>" class="table"> <%= movie.title %></i></a> </td>
+										  		<td class="listdata"><a href="<%= movie_path(movie.id)%>" class="table"> <%= movie.title %></a></td>
 					 							</tr>
 												<% end %>
 											<% end %>

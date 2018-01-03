@@ -1,6 +1,6 @@
 
-  <div class="container">
-    <h3>Movies</h3>
+  <div class="container outercontainerdetails">
+    <%= render 'header/showheader' %>
       <div class="tabbable" id="tabs-438739">
         <ul class="nav nav-tabs">
           <li class="<%=rating_check(@sorted)%>">
@@ -11,7 +11,7 @@
           </li>
         </ul>
 
-
+        <div class="innercontainer">
         <div class="tab-content">
           <div class="tab-pane <%=rating_check(@sorted)%>" id="panel-85832">
                 <%= render partial: "detail", locals: {sorted: @movies_rating} %>
@@ -21,5 +21,5 @@
           </div>
         </div>
      </div>
-
+   </div>
 </div>
