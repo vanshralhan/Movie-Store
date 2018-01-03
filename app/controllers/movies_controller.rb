@@ -58,24 +58,20 @@ class MoviesController < ApplicationController
 
   def browse
       @movie = Movie.all
-
-      @search = params[:search]
-      @moviesearch = Movie.search(params[:search])
       @sorted = params[:view]
 
+      @moviesearch = Movie.all.search(params[:search])
 
-      if(@search.present?)
-          @movies_rating = Movie.search(params[:search]).order('rating DESC')
-          @movies_view = Movie.search(params[:search]).order('view_count DESC')
+
+
+      if(@moviesearch.present?)
+          @movies_rating = Movie.all.order('rating DESC').search(params[:search])
+          @movies_view = Movie.all.order('view_count DESC').search(params[:search])
+          @sorted = "view"
       else
+          @movies_rating = Movie.all.order('rating DESC')
+          @movies_view = Movie.all.order('view_count DESC')
       end
-
-      @movies_rating = Movie.order('rating DESC')
-      @movies_view = Movie.order('view_count DESC')
-  end
-
-  def search
-
   end
 
   private
