@@ -1,29 +1,40 @@
-<footer id="myFooter">
-    <div class="container clearfix">
-        <div class="row">
-            <div class="col-sm-4">
-                <h2 class="logo"><%= link_to 'Movie Store', movies_path %></h2>
-            </div>
-            <div class="col-sm-4">
-                <h5>Get started</h5>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Sign up</a></li>
-                    <li><a href="#">Downloads</a></li>
+<div class="row">
+<footer>
+        <ul>
+				  <li>
+					  <p class="home">Home</p>
+					  <a class="logo" href="<%= movies_path%>">Movie Store</a>
+          </li>
+          <li>
+					  <p class="services">Movies</p>
+					  <ul>
+  						<li><a href="<%=browse_movies_path(view: "rating")%>">By Rating</a></li>
+  						<li><a href="<%=browse_movies_path(view: "view")%>">By Views</a></li>
+					  </ul>
+				  </li>
+          <li>
+  					<p class="reachus">Reach us</p>
+  					<ul>
+  						<li><a href="#">Twitter</a></li>
+  						<li><a href="#">Facebook</a></li>
+  						<li class="contact">9865-6532-65</li>
+  					</ul>
+  				</li>
+  				<li>
+            <% if user_signed_in? %>
+              <p class="clients">Account</p>
+  					    <ul>
+                  <li><a href="<%= edit_user_registration_path %>">Profile</a></li>
+                  <li><%= link_to 'Sign Out', destroy_user_session_path, class: "", :method => :delete  %><li>
                 </ul>
-            </div>
-
-            <div class="col-sm-3">
-                <div class="social-networks">
-                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
-                </div>
-                <button type="button" class="btn btn-default">Contact us</button>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <p>© 2017 Movie Store </p>
-    </div>
+            <% else %>
+              <p class="clients">Join us</p>
+              <ul>
+                <li><a href="<%=new_user_session_path%>">Sign In</a></li>
+                <li><a href="<%= new_user_registration_path%>">Sign Up</a></li>
+  					  </ul>
+            <% end %>
+  				</li>
+  			</ul>
 </footer>
+</div>

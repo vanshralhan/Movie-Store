@@ -1,5 +1,5 @@
 
-  <div class="container outercontainerdetails">
+  <div class="container outercontainerdetails" >
     <%= render 'header/showheader' %>
       <div class="tabbable" id="tabs-438739">
         <ul class="nav nav-tabs">
@@ -12,14 +12,16 @@
         </ul>
 
         <div class="innercontainerdetails">
-        <div class="tab-content">
-          <div class="tab-pane <%=rating_check(@sorted)%>" id="panel-85832">
-                <%= render partial: "detail", locals: {sorted: @movies_rating} %>
-          </div>
-          <div class="tab-pane <%=view_check(@sorted)%>" id="panel-998541">
-              <%= render partial: "detail", locals: {sorted: @movies_view} %>
+          <div class="tab-content">
+              <div class="tab-pane <%=rating_check(@sorted)%>" id="panel-85832">
+                  <%= render partial: "detail", locals: {sorted: @movies_rating} %>
+              </div>
+              <div class="tab-pane <%=view_check(@sorted)%>" id="panel-998541">
+                  <%= render partial: "detail", locals: {sorted: @movies_view} %>
+              </div>
           </div>
         </div>
-     </div>
-   </div>
-</div>
+      </div>
+
+      <%= render 'footer/footer'%>
+  </div>

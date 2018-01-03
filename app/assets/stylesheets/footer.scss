@@ -1,0 +1,106 @@
+
+footer{
+  border-top: 2px solid white;
+  border-top-width: thin;
+  border-bottom: 50px;
+	font-size:14px;
+  margin-bottom: 200px;
+  margin-top: 70px;
+  font-family: 'Gloria Hallelujah';
+}
+
+footer > ul{
+	width:100%;
+  margin:30px 150px;
+}
+
+/* The four columns of links */
+
+footer > ul > li{
+	width:20%;
+	float:left;
+}
+
+footer ul{
+	list-style: none;
+}
+
+/* The links */
+
+footer > ul > li ul li{
+	margin-left:30px;
+	// text-transform: uppercase;
+	// font-weight:bold;
+	line-height:1.8;
+  font-size: 16px;
+}
+
+footer > ul > li ul li a{
+	text-decoration: none !important;
+	// color:#7d8691 !important;
+}
+
+footer > ul > li ul li a:hover{
+	color:#ddd !important;
+}
+
+footer a.logo{
+	color: #e4e4e4 !important;
+	text-decoration: none !important;
+	font-size: 14px;
+	font-weight: bold;
+	// position: absolute;
+	text-transform: uppercase;
+	margin-left: 30px;
+	display: inline-block;
+	margin-top: 7px;
+}
+
+footer p{
+	width: 80%;
+	margin-right: 5%;
+	padding: 9px 0;
+	line-height: 18px;
+	background-color: #058cc7;
+	font-weight: bold;
+	font-size: 14px;
+	color:#fff;
+	text-transform: uppercase;
+	opacity:0.7;
+	// cursor:default;
+
+}
+
+footer > ul > li:hover p{
+	opacity:1;
+}
+.contact{
+  color: #e4e4e4;
+}
+footer p:before{
+	content: '';
+	display: inline-block;
+	width: 16px;
+	height: 18px;
+	margin: 0 12px 0 15px;
+	vertical-align: text-bottom;
+}
+
+
+footer p.home{
+	background-color: #0096d6;
+}
+
+
+footer p.services{
+	background-color: #00b274;
+}
+
+
+footer p.reachus{
+	background-color: #d75ba2;
+}
+
+footer p.clients{
+	background-color: #e9ac40;
+}
