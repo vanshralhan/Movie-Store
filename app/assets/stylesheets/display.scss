@@ -13,8 +13,27 @@
   background-color: black;
   margin-top: 50px;
   margin-bottom: 50px;
-  padding-left: 0px;
-  padding-right: 0px;
+
+  ul {
+    li{
+      font-family: 'Gloria Hallelujah';
+    }
+  }
+}
+.innercontainerdetails{
+  width: 1000px;
+  text-align: center;
+  margin: 20px auto;
+
+  h4{
+    font-family: 'Gloria Hallelujah';
+  }
+}
+
+.detailimage{
+  height: 300px;
+  width: 300px;
+  max-width: 100%;
 }
 
 .image1{
