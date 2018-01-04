@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Signika');
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower");
 @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Josefin+Sans');
+@import "alertify";
+@import "alertify/default";
+@import "alertify/bootstrap";
+
 body{
   margin: 0;padding: 0;background: #000;
   color:#fff;height: 100%;max-height: 100%;
@@ -90,7 +94,7 @@ body{
       top: 50%;
       transform: translate(-50% ,-50%);
     }
-    
+
     .signupmodal{
       display: block !important;
       width: 700px;

@@ -15,9 +15,13 @@
 //= require jquery_ujs
 //= require rails-ujs
 //= require turbolinks
+//= require alertify
+//= require alertify/confirm-modal
 
 jQuery(document).ready(function(){
 jQuery(document).on("click",".searcharea",function(){
   jQuery("#search").toggle("slow");
 });
 });
+
+alertify.set('notifier','position', 'top-center');

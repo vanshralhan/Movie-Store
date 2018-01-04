@@ -5,3 +5,11 @@
 @import "display";
 @import "footer";
 @import "deviselayout";
+@import "alertify";
+@import "alertify/default";
+@import "alertify/bootstrap";
+
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Shadows+Into+Light|Indie-Flower');
+body{
+  font-family: 'Indie-Flower';
+}
