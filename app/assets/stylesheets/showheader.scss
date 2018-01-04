@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Varela+Round");
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower");
-html {
-  box-sizing: border-box;
-}
+
 
 *,
 *:before,
@@ -14,7 +12,10 @@ html {
     padding-top:5px !important; padding-bottom:0 !important;
     height: 30px;
 }
-.navbar {min-height:30px !important;}
+.navbar{
+  min-height:20px !important;
+
+}
 .navbar-default{
   border: none;
   background: black;

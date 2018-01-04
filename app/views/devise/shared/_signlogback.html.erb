@@ -1,0 +1,14 @@
+<% v = 0%>
+<% while v<10 %>
+  <div class= "vertical vertical<%= v %>">
+      <% i = 0%>
+      <% while i<3 %>
+        <% Movie.all.each_with_index do |movie, index| %>
+          <div class="horizontal horizontal0<%= index %>" style="background: url(<%= movie.image_url %>);"></div>
+        <% end %>
+        <% i += 1%>
+      <% end %>
+  </div>
+  <% v+= 1 %>
+<% end %>
+</div>

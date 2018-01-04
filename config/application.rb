@@ -13,9 +13,9 @@ module Moviestore
     # Initialize configuration defaults for originally generated Rails version.
     config.to_prepare do
       Devise::SessionsController.layout "login"
+      Devise::RegistrationsController.layout "signup"
     end
     config.assets.enabled = true
-    config.assets.paths << Rails.root.join('app/assets/fonts')
     config.load_defaults 5.1
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

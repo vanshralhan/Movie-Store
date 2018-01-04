@@ -1,4 +1,5 @@
-@import "showheader";@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Shadows+Into+Light');
+@import "showheader";
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Shadows+Into+Light');
 
 .outercontainer{
   width: 1200px;
@@ -50,135 +51,150 @@
 .browsebtn{
   margin-right: 10px;
 }
-// .carousel .background {
-
-//   background-position: center center;
-//   background-size: 100% 100%;
-//   background-repeat: no-repeat;
-//   height: 900px !important;
-// }
-//
-// @media (max-width:991px) {
-//   .carousel .background {
-//     background-size: cover; /* To make the background image looks good */
-//   }
-// }
-//
-// .carousel .background.a {
-//   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://static.pexels.com/photos/92090/pexels-photo-92090-large.jpeg");
-// }
-//
-// .carousel .background.b {
-//   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://static.pexels.com/photos/93750/pexels-photo-93750-large.jpeg");
-// }
-//
-// .carousel .background.c {
-//   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://static.pexels.com/photos/76827/bahia-ocean-bay-boat-76827-large.jpeg");
-// }
-//
-// .carousel-fade .carousel-inner .item {
-//   opacity: 0;
-//   transition: opacity 0.5s; /* The 0.5s describes the duration to make the opacity from 0 to 1 */
-// }
-//
-// .carousel-fade .carousel-inner .active {
-//   opacity: 1;
-// }
-//
-// /* CSS Hack to trigger GPU for smooth transition */
-// @media all and (transform-3d),
-// (-webkit-transform-3d) {
-//   .carousel-fade .carousel-inner > .item.next,
-//   .carousel-fade .carousel-inner > .item.active.right {
-//     opacity: 0;
-//     -webkit-transform: translate3d(0, 0, 0);
-//     transform: translate3d(0, 0, 0);
-//   }
-//   .carousel-fade .carousel-inner > .item.prev,
-//   .carousel-fade .carousel-inner > .item.active.left {
-//     opacity: 0;
-//     -webkit-transform: translate3d(0, 0, 0);
-//     transform: translate3d(0, 0, 0);
-//   }
-//   .carousel-fade .carousel-inner > .item.next.left,
-//   .carousel-fade .carousel-inner > .item.prev.right,
-//   .carousel-fade .carousel-inner > .item.active {
-//     opacity: 1;
-//     -webkit-transform: translate3d(0, 0, 0);
-//     transform: translate3d(0, 0, 0);
-//   }
-// }
-// /* CSS Hack to trigger GPU for smooth transition */
-//
-// .covertext {
-//   position: absolute; /* To make the div to be place anywhere. It is out of the document flow */
-//   top: 200px; /* The distance between the div with the top of document */
-//   left: 0px; /* Make the div full width */
-//   right: 0px; /* Make the div full width */
-// }
-//
-// .title {
-//   font-family: Verdana;
-//   font-weight: 600;
-//   font-size: 60px;
-//   color: #ffffff;
-//   text-align: center;
-// }
-//
-// .subtitle {
-//   font-family: Verdana;
-//   font-size: 23px;
-//   color: #ffffff;
-//   text-align: center;
-// }
-//
-// .explore {
-//   text-align: center;
-//   margin-top: 10px;
-// }
-//
-// .explore .btn-lg,
-// .explore .btn-lg:hover {
-//   border-radius: 30px;
-//   padding: 15px 25px;
-//   font-size: 22px;
-//   background-image: none;
-//   background-color: #FF4000;
-//   border-color: #FF4000;
-//   color: #ffffff;
-// }
-//
-// // .btn,
-// // .btn:hover {
-// //   border-radius: 0px;
-// //   background-image: none;
-// //   background-color: #FF4000;
-// //   border-color: #FF4000;
-// //   color: #ffffff;
-// //   margin-bottom: 20px;
-// //   box-shadow: none;
-// //   outline: none;
-// // }
-//
-// .btn:focus,
-// .btn:active:focus,
-// .btn.active:focus,
-// .btn.focus,
-// .btn:active.focus,
-// .btn.active.focus {
-//   color: #ffffff;
-//   outline: none;
-// }
-
-
-
-
-
-
-
-
 
 //----------------------------------------------------------------------------------
+
+.bodycheck{
+// background: #499bea;
+// background: -webkit-gradient(linear, 0 0, 0 100%, from(#499bea), to(#207ce5));
+// background: -webkit-linear-gradient(#499bea 0%, #207ce5 100%);
+// background: -moz-linear-gradient(#499bea 0%, #207ce5 100%);
+// background: -o-linear-gradient(#499bea 0%, #207ce5 100%);
+// background: linear-gradient(#499bea 0%, #207ce5 100%);
+// filter: progid:DXImageTransform.Microsoft.gradient(     startColorstr='#499bea', endColorstr='#207ce5',GradientType=0 );
+width:600px;
+margin:0px 0px 440px 370px;
+top:30px;
+left: 0;
+position:relative;
+
+
+}
+.namelink{
+  margin-left: 70px;
+  text-align: center;
+  link: white;
+  // margin-right: px;
+  font-size: 25px;
+  font-family: 'Gloria Hallelujah';
+}
+
+.movieimagelink{
+  text-align: center;
+  font-size: 15px;
+  font-family: 'Gloria Hallelujah';
+}
+.Items{
+  position:absolute;
+
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.Carousel{
+  margin: 0;
+  padding: 0;
+}
+
+.Carousel li{
+  list-style:none;
+  width:400px;
+  height:300px;
+  background:black;
+  // border-radius:8px;
+  // border:1px solid #000;
+}
+.sliderimage{
+	width:500px;
+	height: 350px;
+	vertical-align: baseline;
+}
+.innercontainer{
+  width: 1200px;
+  background-color: black;
+}
+.topmargin{
+  padding-left: 100px;
+  padding-right: 100px;
+}  h2{
+    font-family: 'Gloria Hallelujah';
+  }
+
+/*Let the users know there is something to click.*/
+.Carousel li:hover{
+  cursor:pointer;
+}
+
+/*The front image.*/
+.i1{
+  z-index:3000;
+}
+
+/*The left image.*/
+.i2{
+  left:-200px;
+  z-index:2000;
+  opacity:0.6;
+  -webkit-transform: scale(.75);
+  -moz-transform: scale(.75);
+  transform: scale(.75);
+}
+
+/*The left image.*/
+.i3{
+  left:-400px;
+  z-index:1000;
+  opacity:0.4;
+  -webkit-transform: scale(.50);
+  -moz-transform: scale(.50);
+  transform: scale(.50);
+}
+
+/*The right image.*/
+.i4{
+  left:200px;
+  z-index:2000;
+  opacity:0.6;
+  -webkit-transform: scale(.75);
+  -moz-transform: scale(.75);
+  transform: scale(.75);
+}
+
+/*The right image.*/
+.i5{
+  left:400px;
+  z-index:1000;
+  opacity:0.4;
+  -webkit-transform: scale(.50);
+  -moz-transform: scale(.50);
+  transform: scale(.50);
+}
+
+
+.Scale{
+  z-index:1000;
+  -webkit-transform: scale(.75);
+  -moz-transform: scale(.75);
+  transform: scale(.75);
+}
+
+.Scale2{
+  z-index:3000;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  transform: scale(1);
+}
+
+.Items{
+  font-family:oswald;
+  font-size:200px;
+  text-align:center;
+  color:#FFF;
+  text-shadow:#000 0px 1px;
+}
+//----------------------------------------------------------------------------------------
 // .outercontainer{
 // }.innercontainer{
 // 	background-color: black;
@@ -322,144 +338,3 @@
 
 
 //------------------------------------------------------------------------------------
-// carousel 12345
-.bodycheck{
-// background: #499bea;
-// background: -webkit-gradient(linear, 0 0, 0 100%, from(#499bea), to(#207ce5));
-// background: -webkit-linear-gradient(#499bea 0%, #207ce5 100%);
-// background: -moz-linear-gradient(#499bea 0%, #207ce5 100%);
-// background: -o-linear-gradient(#499bea 0%, #207ce5 100%);
-// background: linear-gradient(#499bea 0%, #207ce5 100%);
-// filter: progid:DXImageTransform.Microsoft.gradient(     startColorstr='#499bea', endColorstr='#207ce5',GradientType=0 );
-width:600px;
-margin:0px 0px 440px 370px;
-top:30px;
-left: 0;
-position:relative;
-
-
-}
-.namelink{
-  margin-left: 70px;
-  text-align: center;
-  link: white;
-  // margin-right: px;
-  font-size: 25px;
-  font-family: 'Gloria Hallelujah';
-}
-
-.movieimagelink{
-  text-align: center;
-  font-size: 15px;
-  font-family: 'Gloria Hallelujah';
-}
-.Items{
-  position:absolute;
-
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.Carousel{
-  margin: 0;
-  padding: 0;
-}
-
-.Carousel li{
-  list-style:none;
-  width:400px;
-  height:300px;
-  background:black;
-  // border-radius:8px;
-  // border:1px solid #000;
-}
-.sliderimage{
-	width:500px;
-	height: 350px;
-	vertical-align: baseline;
-}
-.innercontainer{
-  width: 1200px;
-  background-color: black;
-}
-.topmargin{
-  padding-left: 100px;
-  padding-right: 100px;
-}  h2{
-    font-family: 'Gloria Hallelujah';
-  }
-
-/*Let the users know there is something to click.*/
-.Carousel li:hover{
-  cursor:pointer;
-}
-
-/*The front image.*/
-.i1{
-  z-index:3000;
-}
-
-/*The left image.*/
-.i2{
-  left:-200px;
-  z-index:2000;
-  opacity:0.6;
-  -webkit-transform: scale(.75);
-  -moz-transform: scale(.75);
-  transform: scale(.75);
-}
-
-/*The left image.*/
-.i3{
-  left:-400px;
-  z-index:1000;
-  opacity:0.4;
-  -webkit-transform: scale(.50);
-  -moz-transform: scale(.50);
-  transform: scale(.50);
-}
-
-/*The right image.*/
-.i4{
-  left:200px;
-  z-index:2000;
-  opacity:0.6;
-  -webkit-transform: scale(.75);
-  -moz-transform: scale(.75);
-  transform: scale(.75);
-}
-
-/*The right image.*/
-.i5{
-  left:400px;
-  z-index:1000;
-  opacity:0.4;
-  -webkit-transform: scale(.50);
-  -moz-transform: scale(.50);
-  transform: scale(.50);
-}
-
-
-.Scale{
-  z-index:1000;
-  -webkit-transform: scale(.75);
-  -moz-transform: scale(.75);
-  transform: scale(.75);
-}
-
-.Scale2{
-  z-index:3000;
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  transform: scale(1);
-}
-
-.Items{
-  font-family:oswald;
-  font-size:200px;
-  text-align:center;
-  color:#FFF;
-  text-shadow:#000 0px 1px;
-}

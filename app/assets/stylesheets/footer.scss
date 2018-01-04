@@ -1,11 +1,20 @@
 
+.footerback{
+	background-color: black;
+	border-top: 1px white;
+}
 footer{
-  border-top: 2px solid white;
-  border-bottom: 50px;
+  // border-top: 2px solid white;
+  // border-bottom: 50px;
 	font-size:14px;
   margin-bottom: 200px;
-  margin-top: 70px;
+  margin-top: 0px;
   font-family: 'Gloria Hallelujah';
+}
+hr{
+  margin-top: 70px;
+  color: white;
+  border-width: 2px;;
 }
 
 footer > ul{
@@ -37,6 +46,12 @@ footer > ul > li ul li{
 footer > ul > li ul li a{
 	text-decoration: none !important;
 	// color:#7d8691 !important;
+	margin-left: 20px;
+
+}
+.contact{
+	color: #e4e4e4;
+	margin-left: 40px;
 }
 
 footer > ul > li ul li a:hover{
@@ -73,15 +88,13 @@ footer p{
 footer > ul > li:hover p{
 	opacity:1;
 }
-.contact{
-  color: #e4e4e4;
-}
+
 footer p:before{
 	content: '';
 	display: inline-block;
 	width: 16px;
 	height: 18px;
-	margin: 0 12px 0 15px;
+	margin: 0px 12px 0px 15px;
 	vertical-align: text-bottom;
 }
 

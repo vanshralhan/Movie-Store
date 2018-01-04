@@ -1,6 +1,7 @@
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Signika');
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
 @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Josefin+Sans');
-
 body{
   margin: 0;padding: 0;background: #000;
   color:#fff;height: 100%;max-height: 100%;
@@ -15,9 +16,10 @@ body{
       text-align:center;
       text-transform:uppercase;
       line-height: 14px;
-      font-size:10px;
+      font-size:20px;
       font-weight:400;
       z-index:10;
+
 
       a{
         color:#fff;
@@ -32,28 +34,42 @@ body{
         }
       }
     }
+
+  .movingimage{
+    height: auto;
+    width: auto;
+  }
+
+  .newuserimage{
+    margin: 30px 30px;
+    height: 100px;
+    width: 100px;
+  }
   .heading{
     margin-top: 5px;
-    font-size: 25px;
-    padding-bottom: 5px;
-    font-family: 'Gloria Hallelujah';
+    padding-bottom: 10px;
   }
-  .linksul{
-    list-style: none;
+  .dob{
+    margin-right: 20px;
   }
-  .links{
-    color: #337ab7;
-    text-decoration: none;
-    margin: 0px 0px 0px 0px;
-    font-size: 15px;
-    padding: 0;
-
+  .password{
+    margin-right: 45px;
   }
-  .links:hover{
-    color: white;
+  .confirm{
+    margin-right: -25px;
   }
 
-  .mask {
+  .signupform{
+      padding: 20px;
+      margin: 0px 100px;
+    .signupbtn{
+      padding: 20px !important;
+
+    }
+  }
+
+
+  .signupmask {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -61,11 +77,24 @@ body{
     z-index: 1;
     box-shadow: 0 0 500px #000 inset,0 0 300px #000 inset,0 0 200px #000 inset;
 
-    .modal{
+    .editmodal{
       display: block !important;
-      opacity:0;
-      width: 350px;
-      height: 420px;
+      width: 700px;
+      height: 500px;
+      background:rgba(00,00,00,0.75);
+      //background-image: -webkit-radial-gradient(cover, #DFDFDF, #B5B5B5);
+      border-radius: 5px;
+      box-shadow:/*0 0 100px #000000, 0 0 50px #000000,*/ 0 0 10px #000000, 0 0 0 1px rgba(47, 47, 47, 0.5) inset;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50% ,-50%);
+    }
+    
+    .signupmodal{
+      display: block !important;
+      width: 700px;
+      height: 500px;
       background:rgba(00,00,00,0.75);
       //background-image: -webkit-radial-gradient(cover, #DFDFDF, #B5B5B5);
       border-radius: 5px;
@@ -75,44 +104,31 @@ body{
       top: 50%;
       transform: translate(-50% ,-50%);
 
-      .circle{
-        background: #0d0d0d;
-        width: 120px;
-        height: 120px;
-        border-radius:50%;
-        position:relative;
-        left:50%;
-        overflow:hidden;
-        transform: translate(-50% ,-50%);
-        box-shadow: 0 0 8px #0a0a0a,0 0 0 1px #0a0a0a;
 
-        background-repeat: no-repeat;
-        background-position:center center;
-        background-size:cover!important;
-      }
 
       .login{
-        margin-top: 40px;
         h1{
             margin: 0;
             padding: 0;
             margin-top: -40px;
             margin-bottom: 20px;
             text-align: center;
+            font-family: arial;
             color: #fff;
             text-shadow: 0 0 10px rgba(0,0,0,0.3);
             letter-spacing: 1px;
             text-align: center;
+            font-family: 'Gloria Hallelujah';
         }
 
         input {
-          width: 300px;
+          width: 400px;
           height: 10px;
-          text-align: center;
-          margin-left: 15px;
-          font-family: 'Josefin Sans';
+          // text-align: center;
+          margin-left: 30px;
           margin-top: 15px;
           background: rgba(0, 0, 0, 0.3);
+          font-family: 'Josefin Sans';
           border: none;
           outline: none;
           padding: 10px;
@@ -128,6 +144,12 @@ body{
           -ms-transition: box-shadow 0.5s ease;
           transition: box-shadow 0.5s ease;
         }
+        .photofield{
+          box-shadow: none;
+        }
+        label{
+          margin-left: 15px;
+        }
         input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
 
         .signinbutton{
@@ -136,7 +158,7 @@ body{
           background: transparent;
           text-align: center;
           border: solid 2px #fff;
-          margin:20px 15px 0px 38px;
+          margin:20px 15px 10px 38px;
           width: 275px;
           color:#fff;
           line-height: 20px;
@@ -194,9 +216,6 @@ body{
           .loginBtn--google:hover,
           .loginBtn--google:focus {
             background: #E74B37;
-          }
-          .remember_me{
-            margin-left: 0px;
           }
       }
     }

@@ -1,44 +1,68 @@
-<h2>Sign up</h2>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<%= render 'devise/shared/script' %>
 
-    <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control", :autofocus => true %>
-    </div>
+    <div id="copy"><a href="<%=movies_path %>" target="_blank"><h3 class ="heading"><b>MovieStore</b></h3></a></div>
+    <div class="signupmask">
+      <div class="signupmodal  display">
+        <div class="login">
+          <h1 class="signupheading">Signup</h1>
+            <div class="form">
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <form method="post">
+                  <%= devise_error_messages! %>
 
-    <div class="form-group">
-      <%= f.label :photo %>
-      <%= f.file_field :photo, class: "form-control" %>
-    </div>
+                <div class="col-md-12">
+                <div class="col-md-8 pull-left">
+                  <div class=" form-group">
+                     <%= f.label :name %>
+                     <%= f.text_field :name, class: "form-control", :autofocus => true, required: true %>
+                  </div>
 
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true, class: "form-control", required: true %>
-    </div>
+                  <div class="form-group">
+                     <%= f.label :photo %>
+                     <%= f.file_field :photo, class: "form-control photofield", required: true %>
+                  </div>
 
-    <div class="form-group">
-      <%= f.label :DateOfBirth %>
-      <%= f.date_field :dob, class: "form-control", required: true %>
-    </div>
+                  <div class="form-group">
+                     <%= f.label :email %>
+                     <%= f.email_field :email, autofocus: true, class: "form-control", required: true %>
+                  </div>
+                  </div>
+                  <div class="col-md-4 pull-left">
+                     <%= image_tag 'usr.png', class: "newuserimage" %>
+                  </div>
+                </div>
 
-    <div class="form-group">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %></>
-      <%= f.password_field :password, class: "form-control", required: true %>
-    </div>
+              <div class="clearfix"></div>
 
-    <div class="form-group">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, class: "form-control", required: true %>
-    </div>
+              <div class="row">
+                  <div class="form-group">
+                     <%= f.label :DateOfBirth, class: "dob" %>
+                     <%= f.date_field :dob, class: "form-control", required: true %>
+                  </div>
 
-    <div class="form-group">
-      <%= f.submit "Sign up", class: "btn btn-lg btn-primary" %>
-    </div>
-  <% end %>
+                  <div class="form-group">
+                     <%= f.label :password, class: "password" %>
+                     <%= f.password_field :password, class: "form-control", required: true, placeholder: "( 6 characters minimum)" %>
+                  </div>
 
-<br>
-  <%= render "devise/shared/links" %>
+                  <div class="form-group">
+                     <%= f.label :confirm_password, class: "confirm" %>
+                     <%= f.password_field :password_confirmation, class: "form-control", required: true %>
+                  </div>
+              </div>
+
+              <div class="form-group signupform">
+                 <%= f.submit "Sign up", class: "btn btn-primary signupbtn" %>
+              </div>
+              <% end %>
+              </form>
+            </div>
+          <br>
+            <% #render "devise/shared/links" %>
+        </div>
+      </div>
+     </div>
+
+
+
+<%= render 'devise/shared/signlogback' %>
