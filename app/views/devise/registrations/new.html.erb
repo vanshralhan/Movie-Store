@@ -14,7 +14,7 @@
                 <div class="col-md-8 pull-left">
                   <div class=" form-group">
                      <%= f.label :name %>
-                     <%= f.text_field :name, class: "form-control", :autofocus => true, required: true %>
+                     <%= f.text_field :name, class: "form-control", :autofocus => true, placeholder: "Enter Name", required: true %>
                   </div>
 
                   <div class="form-group">
@@ -24,7 +24,7 @@
 
                   <div class="form-group">
                      <%= f.label :email %>
-                     <%= f.email_field :email, autofocus: true, class: "form-control", required: true %>
+                     <%= f.email_field :email, autofocus: true, class: "form-control",placeholder:"Enter Your Email", required: true %>
                   </div>
                   </div>
                   <div class="col-md-4 pull-left">
@@ -47,7 +47,7 @@
 
                   <div class="form-group">
                      <%= f.label :confirm_password, class: "confirm" %>
-                     <%= f.password_field :password_confirmation, class: "form-control", required: true %>
+                     <%= f.password_field :password_confirmation, class: "form-control check",placeholder:"Re-type Password", required: true %>
                   </div>
               </div>
 
