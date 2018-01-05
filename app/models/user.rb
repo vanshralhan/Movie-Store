@@ -39,7 +39,7 @@ class User < ApplicationRecord
               # user.last_name = auth.info.last_name
               user.email = auth.info.email
               user.password = Devise.friendly_token[0,20]
-              user.name = auth.info.name
+              user.name = auth.info.first_name
               user.remote_photo_url = auth.info.image
               user.skip_confirmation!
               user.save

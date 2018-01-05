@@ -15,6 +15,9 @@
   margin-top: 50px;
   margin-bottom: 50px;
 
+  .tabbable{
+    font-size: 18px;
+  }
   ul {
     li{
       font-family: 'Gloria Hallelujah';
@@ -22,7 +25,7 @@
   }
 }
 .innercontainerdetails{
-  width: 1000px;
+  width: 1100px;
   text-align: center;
   margin: 20px auto;
 
@@ -44,7 +47,7 @@
 }
 .image{
   width: 350px;
-  height: 300px;
+  height: 290px;
   max-width: 100%;
   background-color: none !important;
 }
@@ -121,8 +124,8 @@ a:hover{
   background-color: black;
 }
 .topmargin{
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
 }  h2{
     font-family: 'Gloria Hallelujah';
     color: #B8B8B8;

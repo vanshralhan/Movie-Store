@@ -19,17 +19,16 @@ class MoviesController < ApplicationController
 
   def create
     if params[:view] == "automatic"
-
       @m = ApiCall.new.api_call(params[:movie][:title])
         if @m == true
-          redirect_to 'http://rv:3000/admin/movies', notice: "Movie Saved Successfully"
+          redirect_to 'http://moviedetail.herokuapp.com/admin/movies', notice: "Movie Saved Successfully"
         else
           redirect_to new_admin_movie_path(view: params[:view]), alert: "Movie Not Found."
         end
     else
         @movie = Movie.new(movie_params)
         if @movie.save
-            redirect_to 'http://rv:3000/admin/movies', notice: "Your Movie Saved Successfully"
+            redirect_to 'http://moviedetail.herokuapp.com/admin/movies', notice: "Your Movie Saved Successfully"
         # redirect_to movie_path(@movie.title), notice: "Your Movie Saved Successfully"
       else
         redirect_to new_admin_movie_path
@@ -61,14 +60,11 @@ class MoviesController < ApplicationController
       @sorted = params[:view]
 
       @moviesearch = Movie.all.search(params[:search])
-
-
-
       if(@moviesearch.present?)
           @movies_rating = Movie.all.order('rating DESC').search(params[:search])
           @movies_view = Movie.all.order('view_count DESC').search(params[:search])
-          @sorted = "view"
       else
+          flash[:alert] = "There are no movies matching your search"
           @movies_rating = Movie.all.order('rating DESC')
           @movies_view = Movie.all.order('view_count DESC')
       end

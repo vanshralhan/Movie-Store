@@ -13,10 +13,10 @@
 
         <div class="innercontainerdetails">
           <div class="tab-content">
-              <div class="tab-pane <%=rating_check(@sorted)%>" id="panel-85832">
+              <div class="tab-pane active" id="panel-85832">
                   <%= render partial: "detail", locals: {sorted: @movies_rating} %>
               </div>
-              <div class="tab-pane <%=view_check(@sorted)%>" id="panel-998541">
+              <div class="tab-pane " id="panel-998541">
                   <%= render partial: "detail", locals: {sorted: @movies_view} %>
               </div>
           </div>

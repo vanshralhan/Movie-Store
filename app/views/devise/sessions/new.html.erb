@@ -13,6 +13,7 @@
       <a href="<%= user_facebook_omniauth_authorize_path %>" >
         <i class="fa fa-facebook-square facebookbutton"></i>
       </a>
+      <p>Or</p>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <form method="post">
         <%= f.email_field :email, placeholder: "Email",autofocus: true, class: "form-control emailfield", required: true %>
