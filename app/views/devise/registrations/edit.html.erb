@@ -27,10 +27,6 @@
                         <%= f.label :email %>
                         <%= f.email_field :email, class: "form-control", :autofocus => true %>
                       </div>
-                    <!-- </div> -->
-                    <!-- <div class="col-sm-4">
-                      <%= image_tag  current_user.photo, class: "rating-show-image" %>
-                    </div> -->
                   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
                   <% end %>
