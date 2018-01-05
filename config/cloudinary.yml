@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: htpps-moviedetail-herokuapp-com
+  api_key: '426656481995798'
+  api_secret: LdtmctUvumV_CTQF1wqt73NvO_s
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: htpps-moviedetail-herokuapp-com
+  api_key: '426656481995798'
+  api_secret: LdtmctUvumV_CTQF1wqt73NvO_s
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: htpps-moviedetail-herokuapp-com
+  api_key: '426656481995798'
+  api_secret: LdtmctUvumV_CTQF1wqt73NvO_s
+  enhance_image_tag: true
+  static_image_support: false
