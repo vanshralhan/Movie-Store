@@ -34,9 +34,9 @@ Rails.application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
-  # config.action_mailer.raise_delivery_errors = true
-  # config.action_mailer.perform_deliveries = true
-  # config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = {:host => 'moviedetail.herokuapp.com', :protocol => 'http'}
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
