@@ -43,7 +43,7 @@
   height: 600px !important;
 }
 .image{
-  width: 300px;
+  width: 350px;
   height: 300px;
   max-width: 100%;
   background-color: none !important;
@@ -80,9 +80,14 @@ position:relative;
 }
 
 .movieimagelink{
+
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
   font-family: 'Gloria Hallelujah';
+a:hover{
+  color: #ffffff;
+  font-size: 19px;
+}
 }
 .Items{
   position:absolute;
@@ -120,6 +125,7 @@ position:relative;
   padding-right: 100px;
 }  h2{
     font-family: 'Gloria Hallelujah';
+    color: #B8B8B8;
   }
 
 /*Let the users know there is something to click.*/

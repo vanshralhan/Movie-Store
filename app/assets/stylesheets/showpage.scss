@@ -1,7 +1,7 @@
 @import "showheader";
 @import url('https://fonts.googleapis.com/css?family=Signika');
 .showcontainer{
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 body{
@@ -9,6 +9,7 @@ body{
       background-size: 100% 100%;
 
       .content{
+        margin-top: 20px;  
         background: rgba(0,0,0,.85);
       }
 

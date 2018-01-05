@@ -8,35 +8,54 @@
   padding: 0;
   margin: 0;
 }
+.headerbar{
+  // background-color: black;
+  height: 90px;
+  margin-bottom: 10px;
+}
 .navbar-nav .navbar-brand {
-    padding-top:5px !important; padding-bottom:0 !important;
-    height: 30px;
+    padding-top:5px !important;
+    padding-bottom:0 !important;
+    height: 40px;
 }
 .navbar{
   min-height:20px !important;
+
+
 
 }
 .navbar-default{
   border: none;
   background: black;
   opacity: .8;
-  margin: 0px 0 15px 0;
+  // margin: 0px 0 15px 0;
+
+}
+.rightside{
+  margin-top: 4px;
+  // padding: 0px 0px;
+  padding-top: 5px;
+
+}
+.leftside{
+  margin-bottom: -10px;
+  padding-top: 5px;
+  // padding: 5px 15px;
 }
 .menu {
   // background-color: black;
   // opacity: .8;
-  padding-top: 15px;
-  padding-bottom: 5px;
+  padding-top: 5px;
+  // padding-bottom: 5px;
   display: flex;
   // justify-content: center;
   align-items: center;
   // max-width: 720px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  // margin-top: 10px;
+  // margin-bottom: 10px;
   // height: 100vh;
   list-style: none;
 }
-
 
 .menu li {
   // height: 5  0px;
@@ -92,6 +111,8 @@
     // opacity: .8;
     // background-color: black;
     margin-right: 5px;
+
+      font-family: 'Indie Flower' !important;
     margin-top: 8px;
     height: 60px;
 }
