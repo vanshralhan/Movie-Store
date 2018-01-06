@@ -44,6 +44,19 @@ body{
     width: auto;
   }
 
+  .erroesignup{
+    font-size: 12px;
+    margin-left: 10px;
+    padding: 0px;
+    list-style: none;
+    li{
+      font-size: 12px;
+      margin-top: -5px;
+      padding: 0px;
+      // list-style: none;
+    }
+  }
+
   .newuserimage{
     margin: 30px 30px;
     height: 100px;
@@ -130,9 +143,9 @@ body{
         input {
           width: 400px;
           height: 10px;
-          // text-align: center;
+          text-align: center;
           margin-left: 30px;
-          margin-top: 15px;
+          margin-top: 10px;
           background: rgba(0, 0, 0, 0.3);
           font-family: 'Josefin Sans';
           // border: 1px;

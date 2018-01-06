@@ -8,51 +8,59 @@
             <div class="form">
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                 <form method="post">
-                  <%= devise_error_messages! %>
+                  <ul class="erroesignup">
+                    <li><%= devise_error_messages! %></li>
+                  </ul>
 
-                <div class="col-md-12">
-                <div class="col-md-8 pull-left">
+                <!-- <div class="col-md-12"> -->
+                <!-- <div class="col-md-8 pull-left"> -->
+
+                  <!-- <div class="row"> -->
+
                   <div class=" form-group">
                      <%= f.label :name %>
-                     <%= f.text_field :name, class: "form-control", :autofocus => true, placeholder: "Enter Name", required: true %>
+                     <%= f.text_field :name, class: "form-control", :autofocus => true, placeholder: "Enter Name", required: false %>
                   </div>
 
                   <div class="form-group">
                      <%= f.label :photo %>
-                     <%= f.file_field :photo, class: "form-control photofield", required: true %>
+                     <%= f.file_field :photo, class: "form-control photofield" %>
                   </div>
 
                   <div class="form-group">
                      <%= f.label :email %>
-                     <%= f.email_field :email, autofocus: true, class: "form-control",placeholder:"Enter Your Email", required: true %>
+                     <%= f.email_field :email, autofocus: true, class: "form-control",placeholder:"Enter Your Email", required: false %>
                   </div>
-                  </div>
-                  <div class="col-md-4 pull-left">
+                  <!-- </div> -->
+                <!-- </div> -->
+
+                  <!-- <div class="col-md-4 pull-left">
                      <%= image_tag 'usr.png', class: "newuserimage" %>
-                  </div>
-                </div>
+                  </div> -->
+
+                <!-- </div> -->
 
               <div class="clearfix"></div>
 
               <div class="row">
                   <div class="form-group">
                      <%= f.label :DateOfBirth, class: "dob" %>
-                     <%= f.date_field :dob, class: "form-control", required: true %>
+                     <%= f.date_field :dob, class: "form-control", required: false %>
                   </div>
 
                   <div class="form-group">
                      <%= f.label :password, class: "password" %>
-                     <%= f.password_field :password, class: "form-control", required: true, placeholder: "( 6 characters minimum)" %>
+                     <%= f.password_field :password, class: "form-control", required: false, placeholder: "( 6 characters minimum)" %>
                   </div>
 
                   <div class="form-group">
                      <%= f.label :confirm_password, class: "confirm" %>
-                     <%= f.password_field :password_confirmation, class: "form-control check",placeholder:"Re-type Password", required: true %>
+                     <%= f.password_field :password_confirmation, class: "form-control check",placeholder:"Re-type Password", required: false %>
                   </div>
               </div>
 
               <div class="form-group signupform">
-                 <%= f.submit "Sign up", class: "btn btn-primary signupbtn", data: { disable_with: 'Check Your Mail Now!!'} %>
+                 <%= f.submit "Sign up", class: "btn btn-primary signupbtn" %>
               </div>
               <% end %>
               </form>
