@@ -1,7 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-  after_create :confirmation_message
+  # after_create :confirmation_message
   # GET /resource/sign_up
   # def new
   #   super
@@ -58,8 +58,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-  private
-    def confirmation_message
-      flash[:alert] = "Confirmation Mail Has been sent to your email."
-    end
+  # private
+  #   def confirmation_message
+  #     flash[:alert] = "Confirmation Mail Has been sent to your email."
+  #   end
 end
