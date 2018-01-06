@@ -19,7 +19,7 @@
 
                   <div class=" form-group">
                      <%= f.label :name %>
-                     <%= f.text_field :name, class: "form-control", :autofocus => true, placeholder: "Enter Name", required: false %>
+                     <%= f.text_field :name, class: "form-control", :autofocus => true, placeholder: "Enter Name", required: true %>
                   </div>
 
                   <div class="form-group">
@@ -29,7 +29,7 @@
 
                   <div class="form-group">
                      <%= f.label :email %>
-                     <%= f.email_field :email, autofocus: true, class: "form-control",placeholder:"Enter Your Email", required: false %>
+                     <%= f.email_field :email, autofocus: true, class: "form-control",placeholder:"Enter Your Email", required: true %>
                   </div>
                   <!-- </div> -->
                 <!-- </div> -->
@@ -45,17 +45,17 @@
               <div class="row">
                   <div class="form-group">
                      <%= f.label :DateOfBirth, class: "dob" %>
-                     <%= f.date_field :dob, class: "form-control", required: false %>
+                     <%= f.date_field :dob, class: "form-control", required: true %>
                   </div>
 
                   <div class="form-group">
                      <%= f.label :password, class: "password" %>
-                     <%= f.password_field :password, class: "form-control", required: false, placeholder: "( 6 characters minimum)" %>
+                     <%= f.password_field :password, class: "form-control", required: true, placeholder: "( 6 characters minimum)" %>
                   </div>
 
                   <div class="form-group">
                      <%= f.label :confirm_password, class: "confirm" %>
-                     <%= f.password_field :password_confirmation, class: "form-control check",placeholder:"Re-type Password", required: false %>
+                     <%= f.password_field :password_confirmation, class: "form-control check",placeholder:"Re-type Password", required: true %>
                   </div>
               </div>
 

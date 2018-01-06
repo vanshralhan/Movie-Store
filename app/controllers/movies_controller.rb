@@ -61,13 +61,24 @@ class MoviesController < ApplicationController
 
       # @moviesearch = Movie.all.search(params[:search])
       search = params[:search]
+      a = Movie.search(params[:search])
       if(search)
-          @movies_rating = Movie.search(params[:search]).order('rating DESC')
-          @movies_view = Movie.search(params[:search]).order('view_count DESC')
+          if a.count == @movie.count
+            flash[:alert]="Enter Something To Search!!"
+            @movies_rating = Movie.all.order('rating DESC')
+            @movies_view = Movie.all.order('view_count DESC')
+          elsif a.empty?
+            flash[:alert]="There are No Movies Matching Your Search!!"
+            @movies_rating = Movie.all.order('rating DESC')
+            @movies_view = Movie.all.order('view_count DESC')
+          else
+            flash[:alert]="Movie Matching Your Search!!"
+            @movies_rating = Movie.order('rating DESC').search(params[:search])
+            @movies_view = Movie.order('view_count DESC').search(params[:search])
+          end
       else
-          flash[:alert] = "There are no movies matching your search"
-          @movies_rating = Movie.all.order('rating DESC')
-          @movies_view = Movie.all.order('view_count DESC')
+        @movies_rating = Movie.all.order('rating DESC')
+        @movies_view = Movie.all.order('view_count DESC')
       end
   end
 

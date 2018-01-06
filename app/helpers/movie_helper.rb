@@ -26,4 +26,13 @@ module MovieHelper
     end
   end
 
+  def sorted_check(sorted)
+    if sorted == nil
+      return @movie
+    elsif sorted == "rating"
+      return @movies_rating
+    elsif sorted == "view"
+      return @movies_view
+    end
+  end
 end
