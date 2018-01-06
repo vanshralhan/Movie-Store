@@ -1,5 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-
+# after_action :message_omniauth, only:[:all]
   def all
     user = User.from_omniauth(request.env["omniauth.auth"])
     if user.persisted?
@@ -40,5 +40,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   #       redirect_to new_user_registration_url, alert: @user.errors.full_messages.join("\n")
   #     end
   # end
+
+  # private
+  #   def message_omniauth
+  #     flash[:alert] = "Logged In Successfuly"
+  #   end
 
 end
