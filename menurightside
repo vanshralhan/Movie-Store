@@ -1,0 +1,21 @@
+<div class="col-sm-6 col-md-6 rightside">
+    <ul class = "menu pull-right">
+      <% if !user_signed_in?%>
+        <li class="dropdown centerli"><a href="<%= new_user_registration_path%>"><b>Sign Up</b></a></li>
+        <li class="dropdown centerli"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>More Options:  </b><strong class="caret"></strong></a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="<%=new_user_session_path%>">Sign In</a>
+          </li>
+        </ul>
+      <%end %>
+      <% if user_signed_in?%>
+        <li class="dropdown centerli"><b><a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %>:  <strong class="caret"></strong></a>
+          <ul class="dropdown-menu">
+            <li class=""><b><a href="<%= edit_user_registration_path %>">Account Settings</a></b></li>
+            <li class=""><b><%= link_to 'Sign Out', destroy_user_session_path, class: "", :method => :delete  %></b></li>
+          </ul></b>
+        </li>
+      <% end %>
+    </ul>
+</div>
