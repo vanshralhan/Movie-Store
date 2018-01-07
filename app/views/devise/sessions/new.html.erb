@@ -7,11 +7,18 @@
 
     <div class="login">
       <h1 class="loginheading">Login</h1>
-      <a href="<%= user_google_oauth2_omniauth_authorize_path %>" >
-        <i class="fa fa-google-plus-square googlebutton"></i>
+        <div class="tooltip">
+          <a href="<%= user_google_oauth2_omniauth_authorize_path %>" >
+          <i class="fa fa-google-plus-square googlebutton"></i>
+          <span class="tooltiptext googletext">Log In With Google</span>
+        </div>
       </a>
-      <a href="<%= user_facebook_omniauth_authorize_path %>" >
-        <i class="fa fa-facebook-square facebookbutton"></i>
+        <div class="tooltip">
+          <a href="<%= user_facebook_omniauth_authorize_path %>" >
+          <i class="fa fa-facebook-square facebookbutton"></i>
+          <span class="tooltiptext">Log In With Facebook</span>
+        </div>
+
       </a>
       <p>Or</p>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
