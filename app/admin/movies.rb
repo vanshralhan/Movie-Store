@@ -32,7 +32,7 @@ filter :title
 filter :genre
 
   action_item :new_movie, only: :index do
-    link_to "Movie Upload Via Api", Figaro.env.Automatic_Movie_Uri
+    link_to "Movie Upload Via Api", "#{Rails.application.secrets.Automatic_Api}"
   end
 
   form :html => { :enctype => "multipart/form-data"} do |f|

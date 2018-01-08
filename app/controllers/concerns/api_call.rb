@@ -1,7 +1,7 @@
 class ApiCall
   def api_call(title)
     @title = title.split(' ').join('_')
-    key = URI(Figaro.env.Api_Url)
+    key = URI("http://www.omdbapi.com/?t=#{@title}&apikey=ef041583")
     a = Net::HTTP.get(key)
     b = JSON.parse(a)
     if b["Response"] == "True"

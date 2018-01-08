@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :authenticate_user!, except: [:index,:browse,:show]
+  before_action :authenticate_user!, except: [:index,:browse,:show,:create]
   before_action :set_link, except: [:index, :new, :create, :show,:browse]
   before_action :authenticate_admin_user!,only: [:create]
 
@@ -21,7 +21,7 @@ class MoviesController < ApplicationController
     if params[:view] == "automatic"
       @m = ApiCall.new.api_call(params[:movie][:title])
         if @m == true
-          redirect_to 'http://moviedetail.herokuapp.com/admin/movies', notice: "Movie Saved Successfully"
+          redirect_to "#{Rails.application.secrets.Create_Path}", notice: "Movie Saved Successfully"
         else
           redirect_to new_admin_movie_path(view: params[:view]), alert: "Movie Not Found."
         end
