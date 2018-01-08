@@ -28,7 +28,7 @@ class MoviesController < ApplicationController
     else
         @movie = Movie.new(movie_params)
         if @movie.save
-            redirect_to 'http://moviedetail.herokuapp.com/admin/movies', notice: "Your Movie Saved Successfully"
+            redirect_to admin_movie_path(@movie), notice: "Your Movie Saved Successfully"
         # redirect_to movie_path(@movie.title), notice: "Your Movie Saved Successfully"
       else
         redirect_to new_admin_movie_path
