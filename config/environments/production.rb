@@ -43,7 +43,7 @@ Rails.application.configure do
       port: 587,
       domain: 'gmail.com',
       authentication: 'plain',
-      user_name: Figaro.env.Email,
+      user_name: Email,
       password: Figaro.env.Password
     }
   config.action_mailer.perform_caching = false
