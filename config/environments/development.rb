@@ -36,8 +36,8 @@ Rails.application.configure do
     domain: 'gmail.com',
     authentication: 'plain',
     enable_starttls_auto: true,
-    user_name: Figaro.env.Email,
-    password: Figaro.env.Password
+    user_name: Rails.application.secrets.Email,
+    password: Rails.application.secrets.Password
   }
 
   config.action_mailer.perform_caching = false

@@ -253,8 +253,8 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
-  config.omniauth :google_oauth2, Figaro.env.Google_app_key, Figaro.env.Google_app_secret
-  config.omniauth :facebook, Figaro.env.Facebook_app_key, Figaro.env.Facebook_app_secret, {:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+  config.omniauth :google_oauth2, Rails.application.secrets.Google_app_key, Rails.application.secrets.Google_app_secret
+  config.omniauth :facebook, Rails.application.secrets.Facebook_app_key, Rails.application.secrets.Facebook_app_secret, {:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
