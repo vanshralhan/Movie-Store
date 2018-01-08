@@ -10,10 +10,16 @@
   </head>
 
   <body>
-    <div class="container deviseouter">
-      <div class="header"><%= render 'header/showheader'%></div>
-        <div class=" row yield"><%= yield %></div>
-      <%= render 'footer/footer'%>
+    <div class="mask">
+      <div class="container deviseouter">
+        <div class="header">
+          <%= render 'header/showheader'%>
+        </div>
+        <div class=" row yield">
+          <%= yield %>
+        </div>
+        <%= render 'footer/footer'%>
+      </div>
     </div>
   </body>
 </html>

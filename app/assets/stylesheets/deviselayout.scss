@@ -12,7 +12,7 @@
   // margin: 20px 50px 20px 50px;
   padding: 20px 50px 20px 50px;
   min-height: 520px;
-  background-color: #333333;
+  // background-color: #C8C7C7;
 }
 
 .devisebtn{
@@ -20,11 +20,18 @@
   margin-left: 20px;
 
 }
+.field{
+  margin-left: 20px;
+  font-size: 22px;
+  font-family: 'Indie Flower';
+  color: white;
+}
 .devisefield{
   height: 30px;
   width: 400px;
+  color: black;
   margin-bottom: 20px;
-  margin-left: 20px;
+  // margin-left: 20px;
 }
 .erroedevise{
   list-style: none;
