@@ -12,7 +12,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'ralhanvansh02@gmail.com'
+  config.mailer_sender = Figaro.env.Email
 
 
   # Configure the class responsible to send e-mails.
@@ -253,8 +253,9 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
-  config.omniauth :google_oauth2, '458309562576-p6cg5avasc80sap9c8b2iua8v1cfs4rt.apps.googleusercontent.com', 'G6sVe0QPySHiubKYM8ITkkZd'
-  config.omniauth :facebook, '2034507776786139', '180b99cdcf15f9aec22ea6b06e6adba5', {:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+  config.omniauth :google_oauth2, Figaro.env.Google_app_key, Figaro.env.Google_app_secret
+  config.omniauth :facebook, Figaro.env.Facebook_app_key, Figaro.env.Facebook_app_secret, {:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
