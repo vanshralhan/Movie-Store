@@ -72,7 +72,7 @@ class MoviesController < ApplicationController
             @movies_rating = Movie.all.order('rating DESC')
             @movies_view = Movie.all.order('view_count DESC')
           else
-            flash[:alert]="Movie Matching Your Search!!"
+            flash[:success]="Movie Matching Your Search!!"
             @movies_rating = Movie.search(params[:search]).order('rating DESC')
             @movies_view = Movie.search(params[:search]).order('view_count DESC')
           end

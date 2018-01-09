@@ -7,7 +7,7 @@ class User < ApplicationRecord
   # devise :omniauthable, omniauth_providers: [:facebook]
   # devise :omniauthable, omniauth_providers: [:google_oauth2]
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_many :movies, through: :comments
 
   def self.from_omniauth(auth, signed_in_resource = nil)
