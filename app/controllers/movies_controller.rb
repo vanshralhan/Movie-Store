@@ -59,7 +59,15 @@ class MoviesController < ApplicationController
       @movie = Movie.all
       @sorted = params[:view]
 
+      if @sorted == "rating"
+         @rating = "active"
+      elsif @sorted == "view"
+         @view = "active"
+      else @rating = "active"
+      end
+
       # @moviesearch = Movie.all.search(params[:search])
+
       search = params[:search]
       @a = Movie.search(params[:search])
       if(search)

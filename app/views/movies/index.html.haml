@@ -1,0 +1,50 @@
+:javascript
+  $(function(){
+  var front = $('.i1'),
+  		others = ['i3', 'i2', 'i4', 'i5'];
+
+  $('.Carousel').on('click', '.Items', function() {
+  	var $this = $(this);
+
+  	$.each(others, function(i, cl) {
+  		if ($this.hasClass(cl)) {
+  			front.removeClass('i1').addClass(cl);
+  			front = $this;
+  			front.addClass('i1').removeClass(cl);
+  		}
+  	});
+  });
+  });
+
+.container.outercontainer
+  = render 'header/showheader'
+  .bodycheck
+    %ul.Carousel
+      - i = 1
+      - @movie.order('id DESC').limit(5).each do |movie|
+        %li{:class => "Items i#{i}"}
+          %img.sliderimage.thumbnail{ :src => "#{movie.image_url}"}
+          %p.namelink
+            %a.linkstyle{ :href => "#{movie_path(movie)}", :style => "color: white;"}
+              = movie.title
+        - i += 1
+  .container.innercontainer
+    .row.topmargin
+      %h2 Top Viewed Movies
+      - @movie.order('view_count DESC').limit(4).each do |f|
+        .col-sm-3.col-md-3
+          = link_to image_tag(f.image_url, alt: "f.title", class: "image"), movie_path(f)
+          %p.movieimagelink
+            %a{ :href => "#{movie_path(f)}" }
+              = f.title
+      %a.btn.btn-primary.btn-md.pull-right.browsebtn{ :href => "#{browse_movies_path(view: 'view')}"} Browse More
+    .row.topmargin
+      %h2 Top Rated Movies
+      - @movie.order('rating DESC').limit(4).each do |f|
+        .col-sm-3.col-md-3
+          = link_to image_tag(f.image_url, alt: "f.title", class: "image"), movie_path(f)
+          %p.movieimagelink
+            %a{ :href => "#{movie_path(f)}" }
+              = f.title
+      %a.btn.btn-primary.btn-md.pull-right.browsebtn{ :href => "#{browse_movies_path(view: 'rating')}"} Browse More
+    = render 'footer/footer'

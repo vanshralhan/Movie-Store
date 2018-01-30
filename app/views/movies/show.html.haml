@@ -1,0 +1,82 @@
+:css
+  body{
+    background-image: url(#{@movie.image_url});
+    background-size: cover;}
+
+
+.container.showcontainer
+  = render "header/showheader"
+  .content
+    .row
+      .col-md-4.movieimagediv
+        %img.showmovieimg{:alt => "#{@movie.title}", :src => "#{@movie.image_url}"}
+      .col-md-8.details
+        %div
+          %h2= "#{@movie.title}"
+        %div.clearfix
+        %div
+          %h3.plot
+            Plot
+            %span= @movie.plot
+        .clearfix
+        .row
+          .col-md-4
+            %h2 Cast
+            %p= @movie.cast
+          .col-md-4
+            %h2 Genre
+            %p= @movie.genre
+          .col-md-4
+        .row
+          .col-md-4
+            %h2
+              Year
+            %p= @movie.year
+          .col-md-4
+            %h2 Rating
+            = image_tag 'rating.png'  , class: "rating-show-image"
+            %p= "#{@movie.rating}/10"
+          .col-md-4
+        .webbutton
+          %a.btn.btn-primary.btn-md{:href => "#{@movie.web}"} Website
+    .clearfix
+    .row
+      .col-md-12
+        .col-md-6
+          = render "comments"
+          .clearfix
+          %h4 Add comment
+          = form_for([@movie,@movie.comments.build], class: "form-inline") do |f|
+            .form-group
+              -if user_signed_in?
+                -if current_user.photo_url != nil
+                  %img.newcommentimage{:src => "#{current_user.photo_url}"}
+                -else
+                  = image_tag 'usr.png', class: "newcommentimage"
+              -else
+                =image_tag 'usr.png', class: "newcommentimage"
+              = f.text_area :body , :class => "commentarea"
+              %p
+                =f.submit :class => "commentsubmit btn btn-primary"
+        .col-md-6
+          .scroll
+            %table.movielist
+              %thead
+                %tr
+                  %th #
+                  %th
+                    %h4
+                      Top
+                      = @movie.genre
+                      Movies
+              %tbody
+                - count = 0
+                - @genre.each do |movie|
+                  - if movie.genre == @movie.genre
+                    - count += 1
+                    %tr
+                      %td.sno= count
+                      %td.listdata
+                        %a.table{:href => "#{movie_path(movie.id)}"}
+                          = movie.title
+  = render 'footer/showfooter'

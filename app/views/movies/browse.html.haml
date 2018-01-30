@@ -1,0 +1,15 @@
+.container.outercontainerdetails
+  = render 'header/showheader'
+  #tabs-438739.tabbable
+    %ul.nav.nav-tabs
+      %li{:class => "#{@rating}"}
+        %a{"data-toggle" => "tab", :href => "#panel-85832 "} By Ratings
+      %li{:class => "#{@view}"}
+        %a{"data-toggle" => "tab", :href => "#panel-998541"} By Views
+    .innercontainerdetails
+      .tab-content
+        #panel-85832{:class => "tab-pane #{@rating}"}
+          = render partial: "detail", locals: {sorted: @movies_rating}
+        #panel-998541{:class => "tab-pane #{@view}"}
+          = render partial: "detail", locals: {sorted: @movies_view}
+  = render 'footer/footer'

@@ -1,0 +1,10 @@
+.row.col-md-12
+  .col-md-8
+    %h1 New Movie
+    = render 'form'
+  .col-md-4
+    %h2 Previous Addition
+    - @all.order('id DESC').each do |f|
+      %ul
+        %li
+          = f.title
