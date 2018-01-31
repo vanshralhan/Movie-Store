@@ -1,0 +1,33 @@
+-if @movie.comments.count < 3
+- else
+  -if @movie.comments.count
+    %a#modal-960972.btn.btn-default.pull-right.morereviewbtn{"data-toggle" => "modal", :href => "#modal-container-960972", :role => "button"} All Comments
+    #modal-container-960972.modal.fade{:role => "dialog", "aria-labelledby" => "myModalLabel", "aira-hidden" => "true" }
+      .modal-dialog.modalbox
+        .modal-content
+          .modal-header
+            %button.close{:type => "button", "data-dismiss" => "modal", "aria-hidden" => "true"} x
+            %%h4 Heading Level 4
+            #myModalLabel.modal-title
+              All Comments
+          .modal-body
+            - @movie.comments.each do |comment|
+              %p
+                .col-md-2
+                  %img.commentimage{:src => "#{User.find(comment.user_id).photo_url}"}
+                  .usernamemodal
+                    %b
+                      %i
+                        #{User.find(comment.user_id).name}
+              .col-md-10.modalcomment
+                #{comment.body}
+                %p.sub-modal
+                  %i
+                    %small
+                      Submitted
+                      %strong
+                        #{time_ago_in_words(comment.created_at)} ago
+              .clearfix
+          .modal-footer
+            %button.btn.btn-default{:type => "button", "data-dismiss" => "modal"} Close
+  - else

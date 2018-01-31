@@ -1,0 +1,13 @@
+.row
+  - sorted.each_with_index do |f,index|
+    - if(index % 4) == 0
+      .clearfix
+      .col-sm-3.col-md-3
+        = link_to image_tag(f.image_url, alt: "f.title", class: "detailimage"), movie_path(f)
+        %p.movieimagelink
+          %a{:href => "#{movie_path(f)}"} f.title
+    - else
+      .col-md-3.col-md-3
+        = link_to image_tag(f.image_url, alt: "f.title", class: "detailimage"), movie_path(f)
+        %p.movieimagelink
+          %a{:href => "#{movie_path(f)}"} f.title

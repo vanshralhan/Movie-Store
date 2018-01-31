@@ -1,0 +1,52 @@
+
+
+<div class="tabbable" id="tabs-438739">
+  <ul class="nav nav-tabs">
+    <li>
+      <a href="#panel-85832 <%=detail_check(@sorted)%>" data-toggle="tab" onclick= "view_rate("rating")">By Ratings</a>
+    </li>
+    <li class="">
+      <a href="#panel-998541 <%=detail_check(@sorted)%>" data-toggle="tab" onclick ="view_rate("view")">By Views</a>
+    </li>
+  </ul>
+
+
+
+     <div class="tab-content">
+       <div class="tab-pane <%=detail_check(@sorted)%>" id="<%= id_check(@sorted) %>">
+         <h2>Top Movies</h2>
+         <div class="row">
+         <% @sort.each_with_index  do |f,index| %>
+            <% if (index % 4) == 0 %>
+            <div class="clearfix"></div>
+            <div class="col-md-3">
+               <%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
+               <h4><%= f.title%></h4>
+             </div>
+            <%else%>
+            <div class="col-md-3">
+               <%= link_to image_tag(f.image_url,alt: "f.title", class: "img-thumbnail image"), movie_path(f) %>
+               <h4><%= f.title%></h4>
+             </div>
+             <% end %>
+         <% end %>
+       </div>
+     </div>
+   </div>
+
+   <script type="text/javascript">
+
+
+   function view_rate(type_value){
+     $.ajax({
+     type: "GET",
+     url: "#{browse_movies_path}",
+     dataType: "script",
+     data: {view: type_value },
+
+     success: function(data){
+       alert(data);
+     }
+     });
+   };
+   </script>

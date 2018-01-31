@@ -1,0 +1,21 @@
+.commentsection
+  .row.comments
+    %h3 Comments&nbsp;(#{@movie.comments.count})
+    - if @movie.comments.count == 0
+      %p &nbsp;&nbsp;&nbsp;Be the first one to comment
+    -else
+      - @movie.comments.limit(3).each do |comment|
+        .row
+          .col-md-12
+            .col-md-2.commentpart
+              %img.commentimage{:src => "#{User.find(comment.user_id).photo_url}"}
+              .commentpart.username
+                %p #{User.find(comment.user_id).name}
+            .col-md-10.commentbody
+              %p #{comment.body}
+              %i
+                %small.subm
+                  Submitted
+                  %strong  #{time_ago_in_words(comment.created_at)} ago
+        .clearfix
+    = render 'allreviews'

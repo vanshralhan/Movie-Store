@@ -1,0 +1,10 @@
+- form_for(@movie) do |form|
+  -if @movie.errors.any?
+    %div
+      %h2
+        = pluralize(@movie.errors.count, "error") prohibited this movie being saved:textile
+      %ul
+        - @movie.errors.full_messages.each do |msg|
+          %li =msg
+
+.form-group

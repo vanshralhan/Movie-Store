@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thanks for commenting, <%= @user.name %></h1>
+
+    <p>
+      Browse more movies on <%= movies_url %>.
+    </p>
+    <p>Have a great day!</p>
+  </body>
+</html>
+
+
+
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset = UTF-8", "http-equiv" = "Content-Type"}/
+  %body
+    %h1
+      Thanks for commenting, #{@user.name}
+    %p
+      Browse more movies on #{movies_url}
+    %p Have a great day!
